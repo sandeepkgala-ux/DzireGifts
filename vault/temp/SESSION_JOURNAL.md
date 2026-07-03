@@ -3348,3 +3348,1907 @@
 ## 2026-07-03 18:07:44.617Z load
 - url: http://localhost:3000/
 
+## 2026-07-03 20:15:09.565Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:15:15.132Z click
+- element: {"tag":"html","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"\n\t\timport { injectIntoGlobalHook } from \"/@react-refresh\";\ninjectIntoGlobalHook(window);\nwindow.$RefreshReg$ = () => {};\nwindow.$RefreshSig$ = () => (type) => type;\n\n\t\t\n\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t\t\n\t#root[data-edit-mode-enabled=\"true\"] {\n\t\tcursor: pointer;\n\t}\n\n\t#root[data-edit-mode-enabled=\"true\"] [data-edit-id] {\n\t\tcursor: pointer;\n\t\toutline: 2px dashed #357DF9;\n\t\toutline-offset: 2px;\n\t\tmin-height: 1em;\n\t\toverflow-wrap: anywhere;\n\t\tmin-width: 0;\n\t}\n\t#root[data-edit-mode-enabled=\"true\"] img[data-edit-id] {\n\t\toutline-offset: -2px;\n\t}\n\t#root[data-edit-mode-enabled=\"true\"] [data-edit-id]:hover {\n\t\tbackground-color: #357DF933;\n\t\toutline-color: #357DF9;\n\t}\n\t#root[data-edit-mode-enabled=\"true\"] [data-edit-id][contenteditable=\"true\"] {\n\t\toutline-style: solid;\n\t\tcaret-color: currentColor;\n\t\tuser-select: text;\n\t\t-webkit-user-select: text;\n\t}\n\n\t/* Block navigation / activation on actionable elements while editing. */\n\t#root[data-edit-mode-enabled=\"true\"] a,\n\t#root[data-edit-mode-enabled=\"true\"] button,\n\t#root[data-edit-mode-enabled=\"true\"] [role=\"button\"],\n\t#root[data-edit-mode-enabled=\"true\"] [type=\"submit\"] {\n\t\tpointer-events: none !important;\n\t}\n\t/* …but editable and disabled targets keep receiving clicks/hover. */\n\t#root[data-edit-mode-enabled=\"true\"] [data-edit-id],\n\t#root[data-edit-mode-enabled=\"true\"] [data-edit-disabled] {\n\t\tpointer-events: auto !important;\n\t}\n\n\t@keyframes fadeInTooltip {\n\t\tfrom {\n\t\t\topacity: 0;\n\t\t\ttransform: translateY(5px);\n\t\t}\n\t\tto {\n\t\t\topacity: 1;\n\t\t\ttransform: translateY(0);\n\t\t}\n\t}\n\n\t#inline-editor-disabled-tooltip {\n\t\tdisplay: none;\n\t\topacity: 0;\n\t\tposition: absolute;\n\t\tbackground-color: #1D1E20;\n\t\tcolor: white;\n\t\tpadding: 4px 8px;\n\t\tborder-radius: 8px;\n\t\tz-index: 10001;\n\t\tfont-size: 14px;\n\t\tborder: 1px solid #3B3D4A;\n\t\tmax-width: 184px;\n\t\ttext-align: center;\n\t}\n\n\t#inline-editor-disabled-tooltip.tooltip-active {\n\t\tdisplay: block;\n\t\tanimation: fadeInTooltip 0.2s ease-out forwards;\n\t}\n\n\t\t\n\t\t\tconst ALLOWED_PARENT_ORIGINS = [\n          \"https://horizons.hosti..."}
+
+## 2026-07-03 20:15:19.359Z navigate
+- url: http://localhost:3000/
+- via: replaceState
+
+## 2026-07-03 20:15:20.517Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:15:20.683Z navigate
+- url: http://localhost:3000/
+- via: replaceState
+
+## 2026-07-03 20:15:21.621Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:15:21.622Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 957
+
+## 2026-07-03 20:15:21.724Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:15:21.725Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 793
+
+## 2026-07-03 20:15:21.727Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:15:21.732Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 2409
+
+## 2026-07-03 20:15:21.733Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:15:21.733Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 1886
+
+## 2026-07-03 20:20:36.246Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:20:37.322Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:20:37.324Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 893
+
+## 2026-07-03 20:20:37.324Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:20:37.324Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 962
+
+## 2026-07-03 20:20:49.115Z click
+- element: {"tag":"nav","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"DzireGiftsHomeShop About UsContact Us"}
+
+## 2026-07-03 20:20:58.297Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:20:59.346Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:20:59.348Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 800
+
+## 2026-07-03 20:20:59.348Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:20:59.348Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 912
+
+## 2026-07-03 20:23:28.523Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:23:29.666Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:23:29.667Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 994
+
+## 2026-07-03 20:23:29.667Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:23:29.668Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 910
+
+## 2026-07-03 20:29:31.177Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:29:32.566Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:29:32.569Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 1114
+
+## 2026-07-03 20:29:32.571Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:29:32.571Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 1203
+
+## 2026-07-03 20:30:20.417Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:30:21.410Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:30:21.411Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 800
+
+## 2026-07-03 20:30:21.465Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:30:21.465Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 764
+
+## 2026-07-03 20:31:57.050Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:31:58.179Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:31:58.180Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 869
+
+## 2026-07-03 20:31:58.181Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:31:58.181Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 963
+
+## 2026-07-03 20:33:40.845Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:33:41.096Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:33:41.380Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:33:41.994Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:33:41.995Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 447
+
+## 2026-07-03 20:33:42.421Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:33:42.421Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 780
+
+## 2026-07-03 20:34:09.056Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:34:10.070Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:34:10.071Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 845
+
+## 2026-07-03 20:34:10.274Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:34:10.274Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 937
+
+## 2026-07-03 20:34:11.065Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:34:11.503Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:34:11.503Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 280
+
+## 2026-07-03 20:34:12.220Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:34:12.220Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 901
+
+## 2026-07-03 20:34:12.513Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:34:13.552Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:34:13.553Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 863
+
+## 2026-07-03 20:34:13.755Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:34:13.756Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 959
+
+## 2026-07-03 20:37:10.254Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:37:10.855Z navigate
+- url: http://localhost:3000/
+- via: replaceState
+
+## 2026-07-03 20:37:18.284Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:37:37.453Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:37:39.663Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:37:39.664Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 2060
+
+## 2026-07-03 20:37:39.690Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:37:39.690Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 1967
+
+## 2026-07-03 20:37:59.782Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:38:08.900Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:38:09.270Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:38:09.622Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:38:20.957Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:38:20.959Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 11154
+
+## 2026-07-03 20:38:21.047Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:38:21.048Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 11111
+
+## 2026-07-03 20:42:35.073Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:42:35.290Z console.error
+- text: ❌ MISSING VARIABLES. Ensure .env is in apps/web/ and uses VITE_ prefix.
+
+## 2026-07-03 20:42:41.185Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:42:57.848Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:42:58.663Z network.error
+- transport: xhr
+- method: GET
+- url: https://dev.dziregifts.com/wp-json/wc/v3](https://dev.dziregifts.com/wp-json/wc/v3)/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 404
+- response: {"code":"rest_no_route","message":"No route was found matching the URL and request method.","data":{"status":404}}
+- durationMs: 302
+
+## 2026-07-03 20:42:58.666Z console.error
+- text: Using fallback categories: Request failed with status code 404
+
+## 2026-07-03 20:42:58.669Z network.error
+- transport: xhr
+- method: GET
+- url: https://dev.dziregifts.com/wp-json/wc/v3](https://dev.dziregifts.com/wp-json/wc/v3)/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 404
+- response: {"code":"rest_no_route","message":"No route was found matching the URL and request method.","data":{"status":404}}
+- durationMs: 542
+
+## 2026-07-03 20:42:58.669Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:43:01.953Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:43:21.964Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:43:24.010Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:43:27.035Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:43:34.920Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:43:42.664Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:43:44.682Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:43:45.304Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:43:45.306Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 352
+
+## 2026-07-03 20:43:45.537Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:43:45.537Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 388
+
+## 2026-07-03 20:44:00.861Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:44:01.035Z navigate
+- url: http://localhost:3000/
+- via: replaceState
+
+## 2026-07-03 20:44:05.991Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:44:05.992Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 4971
+
+## 2026-07-03 20:44:06.210Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:44:06.211Z network.error
+- transport: xhr
+- method: GET
+- url: https://your-domain.com/wp-json/wc/v3/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 4924
+
+## 2026-07-03 20:45:13.306Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:45:13.418Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:45:16.212Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:45:16.292Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:45:17.290Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:45:17.295Z network.error
+- transport: xhr
+- method: GET
+- url: https://dev.dz/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 979
+
+## 2026-07-03 20:45:17.303Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:45:17.310Z network.error
+- transport: xhr
+- method: GET
+- url: https://dev.dz/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 815
+
+## 2026-07-03 20:45:17.492Z console.error
+- text: Using fallback categories: Network Error
+
+## 2026-07-03 20:45:17.511Z network.error
+- transport: xhr
+- method: GET
+- url: https://dev.dz/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=20&hide_empty=true
+- status: 0
+- durationMs: 759
+
+## 2026-07-03 20:45:17.563Z console.error
+- text: ❌ FAILED. Check API URL or CORS settings in WordPress.
+
+## 2026-07-03 20:45:17.570Z network.error
+- transport: xhr
+- method: GET
+- url: https://dev.dz/products/categories?consumer_key=%5Bredacted%5D&consumer_secret=%5Bredacted%5D&per_page=1
+- status: 0
+- durationMs: 1019
+
+## 2026-07-03 20:45:25.330Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:45:25.411Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:45:27.332Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:45:27.607Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:45:30.470Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:45:30.708Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:45:45.474Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:46:36.547Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:46:40.266Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Shop "}
+
+## 2026-07-03 20:46:40.268Z navigate
+- url: http://localhost:3000/shop
+- via: pushState
+
+## 2026-07-03 20:46:44.194Z click
+- element: {"tag":"img","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-03 20:46:47.146Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Add"}
+
+## 2026-07-03 20:46:49.323Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" View"}
+
+## 2026-07-03 20:46:51.433Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Customize & Buy"}
+
+## 2026-07-03 20:46:51.434Z navigate
+- url: http://localhost:3000/product/13
+- via: pushState
+
+## 2026-07-03 20:46:55.043Z focus
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"text","id":null,"placeholder":"Enter name/text to engrave","label":"Enter name/text to engrave","value":"","valueLength":0,"text":""}
+
+## 2026-07-03 20:46:55.138Z click
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"text","id":null,"placeholder":"Enter name/text to engrave","label":"Enter name/text to engrave","value":"","valueLength":0,"text":""}
+
+## 2026-07-03 20:47:07.364Z change
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"text","id":null,"placeholder":"Enter name/text to engrave","label":"Enter name/text to engrave","value":"GALA's","valueLength":6,"text":""}
+
+## 2026-07-03 20:47:07.364Z blur
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"text","id":null,"placeholder":"Enter name/text to engrave","label":"Enter name/text to engrave","value":"GALA's","valueLength":6,"text":""}
+
+## 2026-07-03 20:47:07.365Z focus
+- element: {"tag":"textarea","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":"Special instructions (e.g., specific font, icon preference)","label":"Special instructions (e.g., specific font, icon preference)","value":"","valueLength":0,"text":""}
+
+## 2026-07-03 20:47:07.450Z click
+- element: {"tag":"textarea","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":"Special instructions (e.g., specific font, icon preference)","label":"Special instructions (e.g., specific font, icon preference)","value":"","valueLength":0,"text":""}
+
+## 2026-07-03 20:47:20.759Z change
+- element: {"tag":"textarea","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":"Special instructions (e.g., specific font, icon preference)","label":"Special instructions (e.g., specific font, icon preference)","value":"Please share the preview","valueLength":24,"text":"Please share the preview"}
+
+## 2026-07-03 20:47:20.759Z blur
+- element: {"tag":"textarea","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":"Special instructions (e.g., specific font, icon preference)","label":"Special instructions (e.g., specific font, icon preference)","value":"Please share the preview","valueLength":24,"text":"Please share the preview"}
+
+## 2026-07-03 20:47:20.801Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Add to Cart"}
+
+## 2026-07-03 20:47:27.107Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Add to Cart"}
+
+## 2026-07-03 20:57:51.393Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:57:51.637Z navigate
+- url: http://localhost:3000/
+- via: replaceState
+
+## 2026-07-03 20:57:51.639Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 20:57:51.695Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 20:57:51.711Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx:10:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 20:57:51.712Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250
+- line: 19466
+- col: 13
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performConcurrentWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18734:30)
+
+## 2026-07-03 20:58:51.850Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 20:58:51.955Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 20:58:52.054Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx:10:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 20:58:52.060Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 20:58:58.869Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 20:58:59.054Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 20:58:59.162Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx:10:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 20:58:59.172Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 20:59:15.845Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 20:59:15.980Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 20:59:16.045Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx:10:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 20:59:16.050Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 20:59:21.989Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 20:59:22.239Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 20:59:22.292Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 20:59:22.319Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx:10:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 20:59:22.320Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250
+- line: 19466
+- col: 13
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performConcurrentWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18734:30)
+
+## 2026-07-03 21:00:39.394Z console.error
+- text: [vite] Failed to reload /src/context/StoreContext.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:00:41.906Z console.error
+- text: [vite] Failed to reload /src/context/StoreContext.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:00:45.879Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:00:46.129Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:00:46.207Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx?t=1783112445034:10:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:00:46.213Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 21:02:32.844Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:02:32.921Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:02:32.999Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx?t=1783112551676:10:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:02:33.007Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 21:02:34.848Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:02:34.950Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:02:35.036Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx?t=1783112553731:10:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:02:35.045Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 21:05:26.704Z console.error
+- text: [vite] Failed to reload /src/context/StoreContext.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:05:30.840Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:05:30.908Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:05:30.957Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx?t=1783112729746:10:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:05:30.970Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 21:06:42.849Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:06:42.934Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:06:43.017Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx?t=1783112802190:5:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:06:43.022Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 21:06:43.843Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:06:44.152Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:06:44.222Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx?t=1783112803257:5:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:06:44.225Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 21:06:58.846Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:06:58.914Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:06:58.965Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx?t=1783112818599:5:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:06:58.971Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 21:07:00.847Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:07:00.915Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:07:00.984Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx?t=1783112820315:5:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:07:00.988Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 21:08:43.841Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:08:43.944Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:08:44.030Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx?t=1783112923316:5:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:08:44.039Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 21:08:45.855Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:08:45.928Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CartDrawer.jsx
+- line: 17
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:08:46.004Z console.error
+- text: 
+    The above error occurred in the <CartDrawer> component:
+    
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:79)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx?t=1783112924899:5:33)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:08:46.008Z unhandledrejection
+- message: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:17:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 21:11:05.573Z console.error
+- text: [vite] SyntaxError: The requested module '/src/context/StoreContext.jsx?t=1783113065433' does not provide an export named 'useStore'
+
+## 2026-07-03 21:11:05.574Z console.error
+- text: [vite] Failed to reload /src/pages/ProductDetailPage.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:11:05.624Z console.error
+- text: [vite] SyntaxError: The requested module '/src/context/StoreContext.jsx?t=1783113065433' does not provide an export named 'useStore'
+
+## 2026-07-03 21:11:05.624Z console.error
+- text: [vite] Failed to reload /src/pages/WishlistPage.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:11:05.627Z console.error
+- text: [vite] SyntaxError: The requested module '/src/context/StoreContext.jsx?t=1783113065433' does not provide an export named 'useStore'
+
+## 2026-07-03 21:11:05.629Z console.error
+- text: [vite] Failed to reload /src/pages/CartPage.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:11:05.635Z console.error
+- text: [vite] SyntaxError: The requested module '/src/context/StoreContext.jsx?t=1783113065433' does not provide an export named 'useStore'
+
+## 2026-07-03 21:11:05.636Z console.error
+- text: [vite] Failed to reload /src/components/ProductCard.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:11:05.641Z console.error
+- text: [vite] SyntaxError: The requested module '/src/context/StoreContext.jsx?t=1783113065433' does not provide an export named 'useStore'
+
+## 2026-07-03 21:11:05.641Z console.error
+- text: [vite] Failed to reload /src/App.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:11:06.413Z console.error
+- text: [vite] SyntaxError: The requested module '/src/context/StoreContext.jsx?t=1783113066251' does not provide an export named 'useStore'
+
+## 2026-07-03 21:11:06.415Z console.error
+- text: [vite] Failed to reload /src/pages/ProductDetailPage.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:11:06.454Z console.error
+- text: [vite] SyntaxError: The requested module '/src/context/StoreContext.jsx?t=1783113066251' does not provide an export named 'useStore'
+
+## 2026-07-03 21:11:06.455Z console.error
+- text: [vite] Failed to reload /src/components/ProductCard.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:11:06.466Z console.error
+- text: [vite] SyntaxError: The requested module '/src/context/StoreContext.jsx?t=1783113066251' does not provide an export named 'useStore'
+
+## 2026-07-03 21:11:06.468Z console.error
+- text: [vite] Failed to reload /src/pages/WishlistPage.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:11:06.472Z console.error
+- text: [vite] SyntaxError: The requested module '/src/context/StoreContext.jsx?t=1783113066251' does not provide an export named 'useStore'
+
+## 2026-07-03 21:11:06.474Z console.error
+- text: [vite] Failed to reload /src/pages/CartPage.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:11:06.547Z console.error
+- text: [vite] SyntaxError: The requested module '/src/context/StoreContext.jsx?t=1783113066251' does not provide an export named 'useStore'
+
+## 2026-07-03 21:11:06.548Z console.error
+- text: [vite] Failed to reload /src/App.jsx. This could be due to syntax errors or importing non-existent modules. (see errors above)
+
+## 2026-07-03 21:14:28.699Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 21:14:28.714Z window.error
+- message: Uncaught SyntaxError: The requested module '/src/context/StoreContext.jsx' does not provide an export named 'useStore'
+- source: http://localhost:3000/src/pages/ProductDetailPage.jsx
+- line: 5
+- col: 10
+- stack: SyntaxError: The requested module '/src/context/StoreContext.jsx' does not provide an export named 'useStore'
+
+## 2026-07-03 21:28:20.461Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 21:28:30.123Z click
+- element: {"tag":"vite-error-overlay","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-03 21:28:32.541Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 21:31:02.957Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 21:31:03.289Z window.error
+- message: Uncaught SyntaxError: The requested module '/src/context/StoreContext.jsx' does not provide an export named 'useStore'
+- source: http://localhost:3000/src/components/ProductCard.jsx
+- line: 7
+- col: 10
+- stack: SyntaxError: The requested module '/src/context/StoreContext.jsx' does not provide an export named 'useStore'
+
+## 2026-07-03 21:31:36.353Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 21:31:36.602Z window.error
+- message: Uncaught SyntaxError: The requested module '/src/context/StoreContext.jsx' does not provide an export named 'useStore'
+- source: http://localhost:3000/src/components/ProductCard.jsx
+- line: 7
+- col: 10
+- stack: SyntaxError: The requested module '/src/context/StoreContext.jsx' does not provide an export named 'useStore'
+
+## 2026-07-03 21:33:31.486Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 21:33:31.565Z window.error
+- message: Uncaught SyntaxError: The requested module '/src/context/StoreContext.jsx' does not provide an export named 'useStore'
+- source: http://localhost:3000/src/pages/CartPage.jsx
+- line: 14
+- col: 10
+- stack: SyntaxError: The requested module '/src/context/StoreContext.jsx' does not provide an export named 'useStore'
+
+## 2026-07-03 21:35:23.354Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 21:35:23.460Z window.error
+- message: Uncaught SyntaxError: The requested module '/src/context/StoreContext.jsx' does not provide an export named 'useStore'
+- source: http://localhost:3000/src/pages/WishlistPage.jsx
+- line: 7
+- col: 10
+- stack: SyntaxError: The requested module '/src/context/StoreContext.jsx' does not provide an export named 'useStore'
+
+## 2026-07-03 21:37:20.014Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 21:37:20.299Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CheckoutModal.jsx
+- line: 19
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CheckoutModal (http://localhost:3000/src/components/CheckoutModal.jsx:19:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:37:20.375Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/src/components/CheckoutModal.jsx
+- line: 19
+- col: 11
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CheckoutModal (http://localhost:3000/src/components/CheckoutModal.jsx:19:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:37:20.408Z console.error
+- text: 
+    The above error occurred in the <CheckoutModal> component:
+    
+        at CheckoutModal (http://localhost:3000/src/components/CheckoutModal.jsx:17:26)
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:10:74)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx:4:33)
+        at StoreContainer (http://localhost:3000/src/context/StoreContainer.jsx:5:34)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:37:20.410Z window.error
+- message: Uncaught TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+- source: http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250
+- line: 19466
+- col: 13
+- stack: 
+    TypeError: Cannot destructure property 'cartItems' of 'useCart(...)' as it is undefined.
+        at CheckoutModal (http://localhost:3000/src/components/CheckoutModal.jsx:19:11)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performConcurrentWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18734:30)
+
+## 2026-07-03 21:40:26.850Z window.error
+- message: Uncaught ReferenceError: useCart is not defined
+- source: http://localhost:3000/src/components/CheckoutModal.jsx?t=1783114825794
+- line: 19
+- col: 36
+- stack: 
+    ReferenceError: useCart is not defined
+        at CheckoutModal (http://localhost:3000/src/components/CheckoutModal.jsx?t=1783114825794:19:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:40:26.961Z window.error
+- message: Uncaught ReferenceError: useCart is not defined
+- source: http://localhost:3000/src/components/CheckoutModal.jsx?t=1783114825794
+- line: 19
+- col: 36
+- stack: 
+    ReferenceError: useCart is not defined
+        at CheckoutModal (http://localhost:3000/src/components/CheckoutModal.jsx?t=1783114825794:19:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at HTMLUnknownElement.callCallback2 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3680:22)
+        at Object.invokeGuardedCallbackDev (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3705:24)
+        at invokeGuardedCallback (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:3739:39)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19818:15)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+
+## 2026-07-03 21:40:27.041Z console.error
+- text: 
+    The above error occurred in the <CheckoutModal> component:
+    
+        at CheckoutModal (http://localhost:3000/src/components/CheckoutModal.jsx?t=1783114825794:17:26)
+        at CartDrawer (http://localhost:3000/src/components/CartDrawer.jsx:10:74)
+        at Router (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:7511:13)
+        at BrowserRouter (http://localhost:3000/node_modules/.vite/deps/react-router-dom.js?v=d11df250:10816:3)
+        at StoreProvider (http://localhost:3000/src/context/StoreContext.jsx:4:33)
+        at StoreContainer (http://localhost:3000/src/context/StoreContainer.jsx:5:34)
+        at App
+    
+    Consider adding an error boundary to your tree to customize error handling behavior.
+    Visit https://reactjs.org/link/error-boundaries to learn more about error boundaries.
+
+## 2026-07-03 21:40:27.052Z unhandledrejection
+- message: useCart is not defined
+- stack: 
+    ReferenceError: useCart is not defined
+        at CheckoutModal (http://localhost:3000/src/components/CheckoutModal.jsx?t=1783114825794:19:36)
+        at renderWithHooks (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:11596:26)
+        at mountIndeterminateComponent (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:14974:21)
+        at beginWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:15962:22)
+        at beginWork$1 (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19806:22)
+        at performUnitOfWork (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19251:20)
+        at workLoopSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19190:13)
+        at renderRootSync (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:19169:15)
+        at recoverFromConcurrentError (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18786:28)
+        at performSyncWorkOnRoot (http://localhost:3000/node_modules/.vite/deps/chunk-POVVOG4E.js?v=d11df250:18932:28)
+
+## 2026-07-03 21:41:19.385Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 21:41:40.365Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Contact Us"}
+
+## 2026-07-03 21:41:40.367Z navigate
+- url: http://localhost:3000/contact
+- via: pushState
+
+## 2026-07-03 21:41:41.946Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"About Us"}
+
+## 2026-07-03 21:41:41.947Z navigate
+- url: http://localhost:3000/about
+- via: pushState
+
+## 2026-07-03 21:41:44.483Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Shop "}
+
+## 2026-07-03 21:41:44.483Z navigate
+- url: http://localhost:3000/shop
+- via: pushState
+
+## 2026-07-03 21:41:47.505Z click
+- element: {"tag":"img","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-03 21:41:49.626Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" View"}
+
+## 2026-07-03 21:41:50.459Z click
+- element: {"tag":"div","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Name PlatesAdiyogi Name Plate 0 · 12 reviews₹399₹699MaterialAcrylic / MDFThemeModernColorGold / MetallicOccasionHome DecorIn stock · Made to orderCustomize & Buy"}
+
+## 2026-07-03 21:41:51.082Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Customize & Buy"}
+
+## 2026-07-03 21:41:51.082Z navigate
+- url: http://localhost:3000/product/13
+- via: pushState
+
+## 2026-07-03 21:41:53.251Z focus
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"text","id":null,"placeholder":"Enter name/text to engrave","label":"Enter name/text to engrave","value":"","valueLength":0,"text":""}
+
+## 2026-07-03 21:41:53.348Z click
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"text","id":null,"placeholder":"Enter name/text to engrave","label":"Enter name/text to engrave","value":"","valueLength":0,"text":""}
+
+## 2026-07-03 21:41:54.779Z change
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"text","id":null,"placeholder":"Enter name/text to engrave","label":"Enter name/text to engrave","value":"fds","valueLength":3,"text":""}
+
+## 2026-07-03 21:41:54.779Z blur
+- element: {"tag":"input","role":null,"ariaLabel":null,"name":null,"type":"text","id":null,"placeholder":"Enter name/text to engrave","label":"Enter name/text to engrave","value":"fds","valueLength":3,"text":""}
+
+## 2026-07-03 21:41:54.779Z focus
+- element: {"tag":"textarea","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":"Special instructions (e.g., specific font, icon preference)","label":"Special instructions (e.g., specific font, icon preference)","value":"","valueLength":0,"text":""}
+
+## 2026-07-03 21:41:54.875Z click
+- element: {"tag":"textarea","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":"Special instructions (e.g., specific font, icon preference)","label":"Special instructions (e.g., specific font, icon preference)","value":"","valueLength":0,"text":""}
+
+## 2026-07-03 21:41:56.388Z change
+- element: {"tag":"textarea","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":"Special instructions (e.g., specific font, icon preference)","label":"Special instructions (e.g., specific font, icon preference)","value":"sdfds","valueLength":5,"text":"sdfds"}
+
+## 2026-07-03 21:41:56.388Z blur
+- element: {"tag":"textarea","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":"Special instructions (e.g., specific font, icon preference)","label":"Special instructions (e.g., specific font, icon preference)","value":"sdfds","valueLength":5,"text":"sdfds"}
+
+## 2026-07-03 21:41:56.442Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Add to Cart"}
+
+## 2026-07-03 21:42:01.515Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Add to Cart"}
+

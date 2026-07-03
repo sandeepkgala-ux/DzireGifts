@@ -9,7 +9,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import { useStore } from "@/context/StoreContext";
+import { useStore } from "../context/useStore";
 
 const CartPage = () => {
   const { cart, removeFromCart, updateQuantity, cartSubtotal } = useStore();

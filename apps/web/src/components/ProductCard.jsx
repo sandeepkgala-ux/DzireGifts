@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Heart, Star, Eye, GitCompare, ShoppingBag } from "lucide-react";
-import { useStore } from "@/context/StoreContext"; // 1. Import the global context
+import { useStore } from "../context/useStore"; // 1. Import the global context
 
 const discount = (p) => Math.round((1 - p.price / p.mrp) * 100);
 

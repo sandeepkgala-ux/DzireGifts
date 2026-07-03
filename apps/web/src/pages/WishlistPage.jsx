@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Heart, ShoppingBag, Trash2, ArrowRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
-import { useStore } from "@/context/StoreContext";
+import { useStore } from "../context/useStore";
 
 const WishlistPage = () => {
   const { wishlist, toggleWishlist, addToCart } = useStore();

@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { StoreProvider } from "./context/StoreContext";
+import { StoreContainer } from "./context/StoreContainer"; // Updated import
+import CartDrawer from "./components/CartDrawer";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import Home from "./pages/HomePage";
 import ShopPage from "./pages/ShopPage";
@@ -10,8 +11,11 @@ import WishlistPage from "./pages/WishlistPage";
 
 function App() {
   return (
-    <StoreProvider>
+    <StoreContainer>
+      {" "}
+      {/* Updated from StoreProvider */}
       <BrowserRouter>
+        <CartDrawer />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/shop" element={<ShopPage />} />
@@ -22,7 +26,7 @@ function App() {
           <Route path="/wishlist" element={<WishlistPage />} />
         </Routes>
       </BrowserRouter>
-    </StoreProvider>
+    </StoreContainer>
   );
 }
 

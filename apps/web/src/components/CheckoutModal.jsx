@@ -11,11 +11,11 @@ import {
   Loader2,
   Mail,
 } from "lucide-react";
-import { useCart } from "@/context/CartContext";
+import { useStore } from "../context/useStore";
 
 const CheckoutModal = ({ isOpen, onClose }) => {
-  const { cartItems, cartTotal } = useCart();
-
+  const { cart, removeFromCart, cartSubtotal } = useStore();
+  // Then map 'cartItems' to 'cart' in your code if you used that name
   const [step, setStep] = useState("address"); // 'address', 'payment', 'success'
   const [isProcessing, setIsProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
