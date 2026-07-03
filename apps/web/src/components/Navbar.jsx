@@ -63,8 +63,7 @@ const Navbar = () => {
             },
           },
         );
-        if (response.data && response.data.length > 0) {
-          // Filter out WordPress default 'Uncategorized' item
+        if (response.data && Array.isArray(response.data)) {
           const cleanCategories = response.data.filter(
             (cat) => cat.slug !== "uncategorized",
           );

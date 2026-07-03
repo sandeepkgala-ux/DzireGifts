@@ -101,8 +101,7 @@ const ShopPage = () => {
           },
         );
 
-        if (response.data && response.data.length > 0) {
-          // Map WooCommerce format cleanly to UI schema
+        if (response.data && Array.isArray(response.data)) {
           const mapped = response.data.map((item) => ({
             id: item.id,
             name: item.name,
