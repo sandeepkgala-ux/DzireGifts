@@ -3345,3 +3345,6 @@
 - url: http://localhost:3000/product/13
 - via: replaceState
 
+## 2026-07-03 18:07:44.617Z load
+- url: http://localhost:3000/
+
