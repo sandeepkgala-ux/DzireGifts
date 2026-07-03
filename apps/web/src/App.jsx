@@ -1,19 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductDetailPage from "./pages/ProductDetailPage";
 import Home from "./pages/HomePage";
+import ShopPage from "./pages/ShopPage"; // <-- 1. Make sure this import is active!
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* The Root URL - This loads your main landing page */}
         <Route path="/" element={<Home />} />
-
-        {/* The Dynamic Product URL - This loads individual customizable items */}
         <Route path="/product/:id" element={<ProductDetailPage />} />
 
-        {/* Placeholder for your Shop Page - Uncomment this when we create ShopPage.jsx */}
-        {/* <Route path="/shop" element={<ShopPage />} /> */}
+        {/* 2. Make sure this line has NO comment brackets around it! */}
+        <Route path="/shop" element={<ShopPage />} />
       </Routes>
     </BrowserRouter>
   );
