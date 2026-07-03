@@ -1,20 +1,18 @@
-import React from "react";
-import { CartProvider } from "./context/CartContext";
-import CartDrawer from "./components/CartDrawer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ProductDetailPage from "./pages/ProductDetailPage";
+// ... import your other pages like Shop/Home
 
-const App = () => {
+function App() {
   return (
-    <CartProvider>
-      <div className="min-h-screen bg-background text-foreground antialiased selection:bg-gold selection:text-primary">
-        {/* The Slide-Out Shopping Cart Drawer sits at the top level so it works on every page */}
-        <CartDrawer />
+    <BrowserRouter>
+      <Routes>
+        {/* Your other routes */}
 
-        {/* Currently displaying Phase 3 Product Detail Page */}
-        <ProductDetailPage />
-      </div>
-    </CartProvider>
+        {/* Notice the ":id" at the end of the path - this captures the dynamic product ID */}
+        <Route path="/product/:id" element={<ProductDetailPage />} />
+      </Routes>
+    </BrowserRouter>
   );
-};
+}
 
 export default App;

@@ -114,7 +114,10 @@ const CartDrawer = () => {
                           <span className="text-muted-foreground text-xs">
                             Qty: {item.quantity}
                           </span>
-                          <span>&#8377;{item.price.toLocaleString()}</span>
+                          <span>
+                            &#8377;
+                            {<p>₹{(item.price || 0).toLocaleString()}</p>}
+                          </span>
                         </div>
                       </div>
                     ))
