@@ -119,3 +119,88 @@
 ## 2026-07-03 02:34:55.270Z load
 - url: http://localhost:3000/
 
+## 2026-07-03 02:51:11.947Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 02:51:16.839Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Proceed to Checkout — ₹2,999"}
+
+## 2026-07-03 02:51:18.455Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Proceed to Checkout — ₹2,999"}
+
+## 2026-07-03 02:51:18.847Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Proceed to Checkout — ₹2,999"}
+
+## 2026-07-03 02:54:19.057Z load
+- url: http://localhost:3000/
+
+## 2026-07-03 02:54:27.680Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Save Customization & Add to Cart — ₹2,999"}
+
+## 2026-07-03 02:54:34.966Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Proceed to WhatsApp Approval "}
+
+## 2026-07-03 02:54:39.319Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-03 02:54:46.087Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"8\" x 20\" VillaGrand Wall Mount"}
+
+## 2026-07-03 02:54:53.751Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Raw Hardwood EtchIncluded"}
+
+## 2026-07-03 02:54:56.872Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Save Customization & Add to Cart — ₹3,999"}
+
+## 2026-07-03 02:55:03.871Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-03 02:55:09.375Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Save Customization & Add to Cart — ₹3,999"}
+
+## 2026-07-03 02:55:18.305Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-03 02:55:18.767Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-03 02:55:19.255Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-03 02:55:20.446Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-03 02:55:21.792Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-03 02:55:24.734Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Raw Hardwood EtchIncluded"}
+
+## 2026-07-03 02:55:26.007Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"8\" x 20\" VillaGrand Wall Mount"}
+
+## 2026-07-03 02:55:27.094Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"12\" Cutwork RingJoined Typography"}
+
+## 2026-07-03 02:55:28.015Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"6\" x 16\" PlateStandard Entrance"}
+
+## 2026-07-03 02:55:33.879Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Save Customization & Add to Cart — ₹2,499"}
+
+## 2026-07-03 02:55:38.335Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-03 02:55:39.319Z click
+- element: {"tag":"button","role":null,"ariaLabel":"Cart","name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"2"}
+
+## 2026-07-03 02:55:40.343Z click
+- element: {"tag":"button","role":null,"ariaLabel":"Cart","name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"2"}
+
+## 2026-07-03 02:55:53.399Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"DzireGifts"}
+
+## 2026-07-03 02:55:53.400Z navigate
+- url: http://localhost:3000/#
+- via: popstate
+

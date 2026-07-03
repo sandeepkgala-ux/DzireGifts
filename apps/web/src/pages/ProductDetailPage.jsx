@@ -11,11 +11,8 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import { IMG } from "@/data/site";
+import { useCart } from "@/context/CartContext"; // <-- LINE 1: Imported Cart Hook
 
-// ==========================================
-// MODULAR CUSTOMIZATION CONFIGURATION
-// Easily add, remove, or edit fields here later!
-// ==========================================
 const CUSTOMIZATION_FIELDS = [
   {
     id: "primaryName",
@@ -46,18 +43,21 @@ const CUSTOMIZATION_FIELDS = [
 ];
 
 const ProductDetailPage = () => {
-  // Store form inputs dynamically
-  const [formData, setFormData] = useState({});
+  const { addToCart } = useCart(); // <-- LINE 2: Activated Cart Hook inside component
+
+  const [formData, setFormData] = useState({
+    primaryName: "The Kapoors",
+    secondaryDetails: "Flat 402, Oakwood",
+    designNotes: "",
+  });
   const [selectedMaterial, setSelectedMaterial] = useState("mirror-gold");
   const [selectedSize, setSelectedSize] = useState("6x16");
   const [activeImage, setActiveImage] = useState(IMG.woodPlate);
 
-  // Handle dynamic form typing
   const handleInputChange = (fieldId, value) => {
     setFormData((prev) => ({ ...prev, [fieldId]: value }));
   };
 
-  // Pricing calculation
   const basePrice =
     selectedSize === "6x16" ? 2499 : selectedSize === "12-ring" ? 3299 : 3999;
   const materialAddon =
@@ -74,9 +74,8 @@ const ProductDetailPage = () => {
 
       <main className="container py-10 md:py-16">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* LEFT COLUMN: High-Res Static Gallery (6 Cols) */}
+          {/* LEFT COLUMN: High-Res Static Gallery */}
           <div className="lg:col-span-6 space-y-6 sticky top-28">
-            {/* Primary Image Showcase */}
             <div className="aspect-[4/3] rounded-3xl overflow-hidden bg-secondary border border-border shadow-2xl relative group">
               <img
                 src={activeImage}
@@ -88,7 +87,6 @@ const ProductDetailPage = () => {
               </div>
             </div>
 
-            {/* Thumbnail Gallery Swapper */}
             <div className="grid grid-cols-4 gap-3">
               {[IMG.woodPlate, IMG.acrylic, IMG.islamic, IMG.heroVilla].map(
                 (img, index) => (
@@ -107,7 +105,6 @@ const ProductDetailPage = () => {
               )}
             </div>
 
-            {/* Technical Craftsmanship Callout Box */}
             <div className="bg-secondary/40 rounded-2xl p-6 border border-border space-y-3">
               <h4 className="font-display text-base font-semibold text-gold flex items-center gap-2">
                 <Sparkles className="h-4 w-4" /> Built for Permanence & Ease
@@ -132,9 +129,8 @@ const ProductDetailPage = () => {
             </div>
           </div>
 
-          {/* RIGHT COLUMN: Customization & Order Workflow (6 Cols) */}
+          {/* RIGHT COLUMN: Customization & Order Workflow */}
           <div className="lg:col-span-6 space-y-8 bg-card p-6 md:p-10 rounded-3xl border border-border shadow-sm">
-            {/* Product Header */}
             <div>
               <span className="text-xs uppercase tracking-[0.3em] text-gold font-semibold">
                 Bespoke Collection
@@ -262,6 +258,7 @@ const ProductDetailPage = () => {
                     <textarea
                       id={field.id}
                       rows="2"
+                      defaultValue={formData[field.id] || ""}
                       placeholder={field.placeholder}
                       onChange={(e) =>
                         handleInputChange(field.id, e.target.value)
@@ -272,6 +269,7 @@ const ProductDetailPage = () => {
                     <input
                       id={field.id}
                       type={field.type}
+                      defaultValue={formData[field.id] || ""}
                       placeholder={field.placeholder}
                       onChange={(e) =>
                         handleInputChange(field.id, e.target.value)
@@ -309,8 +307,32 @@ const ProductDetailPage = () => {
 
             {/* Action Buttons */}
             <div className="space-y-3 pt-2">
-              <button className="w-full bg-gold text-primary font-bold py-4 rounded-xl shadow-xl hover:brightness-105 active:scale-[0.99] transition text-sm tracking-wide uppercase">
-                Proceed to Checkout — &#8377;{finalPrice.toLocaleString()}
+              {/* <-- LINE 3: Connected onClick to addToCart function! --> */}
+              <button
+                onClick={() => {
+                  addToCart({
+                    title: "Royal Heritage Laminated Name Plate",
+                    size:
+                      selectedSize === "6x16"
+                        ? '6" x 16" Plate'
+                        : selectedSize === "12-ring"
+                          ? '12" Cutwork Ring'
+                          : '8" x 20" Villa',
+                    material:
+                      selectedMaterial === "mirror-gold"
+                        ? "Mirror-Finish Gold Acrylic"
+                        : selectedMaterial === "metallic-abs"
+                          ? "Metallic ABS Sheet"
+                          : "Raw Hardwood Etch",
+                    price: finalPrice,
+                    quantity: 1,
+                    customization: formData,
+                  });
+                }}
+                className="w-full bg-gold text-primary font-bold py-4 rounded-xl shadow-xl hover:brightness-105 active:scale-[0.99] transition text-sm tracking-wide uppercase flex items-center justify-center gap-2"
+              >
+                Save Customization & Add to Cart — &#8377;
+                {finalPrice.toLocaleString()}
               </button>
               <p className="text-[0.65rem] text-center text-muted-foreground">
                 Handcrafted in Maharashtra · Free Insured Shipping Across India
