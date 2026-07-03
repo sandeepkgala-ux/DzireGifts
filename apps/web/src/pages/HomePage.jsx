@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   ArrowRight,
   Star,
@@ -64,7 +65,7 @@ const HomePage = () => {
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Navbar />
 
-      {/* Hero - Redesigned to Left Alignment */}
+      {/* Hero Section */}
       <section className="relative h-[100vh] min-h-[700px] flex items-center overflow-hidden">
         <img
           src={IMG.heroVilla}
@@ -72,7 +73,6 @@ const HomePage = () => {
           className="absolute inset-0 h-full w-full object-cover scale-105"
         />
 
-        {/* Left-to-right dark gradient so the text pops, but the right side of the photo stays bright */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-transparent" />
 
         <div className="container relative z-10 text-white flex flex-col items-start pt-20">
@@ -111,18 +111,18 @@ const HomePage = () => {
             transition={{ delay: 0.5, duration: 0.8, ease: "easeOut" }}
             className="mt-11 flex flex-col sm:flex-row items-center gap-4"
           >
-            <a
-              href="#personalize"
+            <Link
+              to="/shop"
               className="bg-gold text-primary font-semibold px-9 py-4 rounded-xl flex items-center gap-2 hover:brightness-105 active:scale-[0.98] transition shadow-lg shadow-black/20"
             >
               Customize Your Name Plate <ArrowRight className="h-4 w-4" />
-            </a>
-            <a
-              href="#collections"
+            </Link>
+            <Link
+              to="/shop"
               className="border border-white/50 backdrop-blur px-9 py-4 rounded-xl font-medium hover:bg-white/10 transition"
             >
               Explore Collections
-            </a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -180,27 +180,28 @@ const HomePage = () => {
       >
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
           {categories.map((c, i) => (
-            <motion.a
+            <motion.div
               key={c.name}
-              href="#products"
               {...fade}
               transition={{ ...fade.transition, delay: i * 0.08 }}
               className="group relative rounded-2xl overflow-hidden aspect-[3/4]"
             >
-              <img
-                src={c.img}
-                alt={c.name}
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-              <div className="absolute bottom-0 p-5 text-white">
-                <span className="text-[0.65rem] uppercase tracking-wider text-gold">
-                  {c.tag}
-                </span>
-                <h3 className="font-display text-xl mt-1">{c.name}</h3>
-              </div>
-            </motion.a>
+              <Link to="/shop" className="block h-full w-full">
+                <img
+                  src={c.img}
+                  alt={c.name}
+                  loading="lazy"
+                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
+                <div className="absolute bottom-0 p-5 text-white">
+                  <span className="text-[0.65rem] uppercase tracking-wider text-gold">
+                    {c.tag}
+                  </span>
+                  <h3 className="font-display text-xl mt-1">{c.name}</h3>
+                </div>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </Section>
@@ -218,12 +219,12 @@ const HomePage = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <a
-            href="#products"
+          <Link
+            to="/shop"
             className="inline-flex items-center gap-2 border border-primary px-8 py-3.5 rounded-xl font-medium hover:bg-primary hover:text-primary-foreground transition"
           >
             View all products <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </div>
       </Section>
 
@@ -243,7 +244,7 @@ const HomePage = () => {
                 <div className="h-full w-2/3 bg-gold" />
               </div>
               <p className="text-[0.65rem] text-muted-foreground mt-1.5">
-                18 / 24 characters
+                18 / 24 characters · Hooks attached
               </p>
             </div>
           </motion.div>
@@ -256,15 +257,15 @@ const HomePage = () => {
             </h2>
             <p className="text-muted-foreground mt-4 text-lg">
               Choose your font, add a family surname, house number or a custom
-              quote and watch it come alive instantly — with dynamic pricing as
-              you build.
+              quote and watch it come alive instantly. Finished with secure back
+              hooks ready for easy hanging.
             </p>
             <div className="grid sm:grid-cols-2 gap-4 mt-8">
               {[
                 [PenTool, "Live font & name preview"],
                 [Sparkles, "AI design suggestions"],
                 [Gift, "Icons & religious symbols"],
-                [Package, "Custom size calculator"],
+                [Package, "Hangs flush via back hooks"],
               ].map(([Icon, t], i) => (
                 <div
                   key={i}
@@ -278,12 +279,12 @@ const HomePage = () => {
                 </div>
               ))}
             </div>
-            <a
-              href="#products"
+            <Link
+              to="/shop"
               className="mt-8 inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold active:scale-[0.98] transition"
             >
               Start designing <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>
@@ -292,7 +293,7 @@ const HomePage = () => {
       <section className="relative py-28 md:py-40 overflow-hidden">
         <img
           src={IMG.livingRoom}
-          alt="Personalized wooden wall decor in a warm living room"
+          alt="Personalized wooden wall decor hanging in a warm living room"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-black/45" />
@@ -304,15 +305,15 @@ const HomePage = () => {
             Decor that turns a house into a home
           </h2>
           <p className="mt-4 text-white/85 text-lg">
-            Warm woods, soft finishes and personal touches designed to live
-            beautifully in your space.
+            Warm woods, soft finishes and personal touches designed to hang
+            beautifully on your walls.
           </p>
-          <a
-            href="#collections"
+          <Link
+            to="/shop"
             className="mt-8 inline-flex items-center gap-2 bg-gold text-primary font-semibold px-8 py-4 rounded-xl active:scale-[0.98] transition"
           >
             Explore lifestyle <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </motion.div>
       </section>
 
@@ -327,13 +328,13 @@ const HomePage = () => {
             <h3 className="font-display text-xl mb-4">By occasion</h3>
             <div className="flex flex-wrap gap-3">
               {occasions.map((o) => (
-                <a
+                <Link
                   key={o}
-                  href="#products"
+                  to="/shop"
                   className="px-5 py-2.5 rounded-full border border-border bg-card hover:border-gold hover:text-gold transition text-sm font-medium"
                 >
                   {o}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -341,13 +342,13 @@ const HomePage = () => {
             <h3 className="font-display text-xl mb-4">By material</h3>
             <div className="flex flex-wrap gap-3">
               {materials.map((m) => (
-                <a
+                <Link
                   key={m}
-                  href="#products"
+                  to="/shop"
                   className="px-5 py-2.5 rounded-full border border-border bg-card hover:border-wood hover:text-wood transition text-sm font-medium"
                 >
                   {m}
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -403,7 +404,7 @@ const HomePage = () => {
             ["Choose", "Pick a design, material and size"],
             ["Personalize", "Add names, icons & a custom quote"],
             ["Approve", "Preview & confirm your design"],
-            ["Delivered", "Crafted and shipped to your door"],
+            ["Delivered", "Crafted with back hooks and shipped to your door"],
           ].map(([t, s], i) => (
             <motion.div
               key={t}
@@ -511,10 +512,10 @@ const HomePage = () => {
             IMG.accessories,
             IMG.heroVilla,
           ].map((src, i) => (
-            <a
+            <Link
               key={i}
-              href="#"
-              className="group relative rounded-xl overflow-hidden aspect-square"
+              to="/shop"
+              className="group relative rounded-xl overflow-hidden aspect-square block"
             >
               <img
                 src={src}
@@ -525,7 +526,7 @@ const HomePage = () => {
               <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 flex items-center justify-center transition">
                 <Instagram className="h-6 w-6 text-white opacity-0 group-hover:opacity-100 transition" />
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </Section>
@@ -546,12 +547,12 @@ const HomePage = () => {
             </p>
           </div>
           <div className="lg:justify-self-end">
-            <a
-              href="#newsletter"
+            <Link
+              to="/shop"
               className="inline-flex items-center gap-2 bg-white text-wood font-semibold px-8 py-4 rounded-xl active:scale-[0.98] transition"
             >
               Request a quote <ArrowRight className="h-4 w-4" />
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -629,9 +630,12 @@ const HomePage = () => {
               <ul className="space-y-2.5 text-sm">
                 {items.map((i) => (
                   <li key={i}>
-                    <a href="#" className="hover:text-gold transition-colors">
+                    <Link
+                      to="/shop"
+                      className="hover:text-gold transition-colors"
+                    >
                       {i}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -643,12 +647,12 @@ const HomePage = () => {
             &copy; {new Date().getFullYear()} Dzire Gifts. All rights reserved.
           </p>
           <div className="flex gap-5">
-            <a href="#" className="hover:text-gold">
+            <Link to="/shop" className="hover:text-gold">
               Privacy Policy
-            </a>
-            <a href="#" className="hover:text-gold">
+            </Link>
+            <Link to="/shop" className="hover:text-gold">
               Terms &amp; Conditions
-            </a>
+            </Link>
           </div>
         </div>
       </footer>

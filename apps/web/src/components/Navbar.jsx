@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
   Search,
   Heart,
@@ -63,14 +64,15 @@ const Navbar = () => {
       </div>
 
       <nav className="container flex items-center justify-between h-16 md:h-20">
-        <a href="#" className="flex flex-col leading-none z-50">
+        {/* Brand Logo Linked to Root Path */}
+        <Link to="/" className="flex flex-col leading-none z-50">
           <span className="font-display text-2xl md:text-3xl font-semibold tracking-tight">
             Dzire
           </span>
           <span className="text-[0.6rem] md:text-[0.65rem] tracking-[0.4em] text-gold uppercase -mt-0.5">
             Gifts
           </span>
-        </a>
+        </Link>
 
         <ul className="hidden lg:flex items-center gap-8 text-sm font-medium">
           <li
@@ -78,9 +80,13 @@ const Navbar = () => {
             onMouseEnter={() => setMega(true)}
             onMouseLeave={() => setMega(false)}
           >
-            <button className="flex items-center gap-1 py-6 hover:text-gold transition-colors">
+            {/* Shop button links to /shop while retaining hover trigger */}
+            <Link
+              to="/shop"
+              className="flex items-center gap-1 py-6 hover:text-gold transition-colors"
+            >
               Shop <ChevronDown className="h-3.5 w-3.5" />
-            </button>
+            </Link>
 
             {/* The invisible hover bridge to prevent flickering */}
             <div className="absolute top-full left-0 w-full h-4 bg-transparent" />
@@ -100,12 +106,13 @@ const Navbar = () => {
                       <ul className="space-y-2">
                         {items.map((i) => (
                           <li key={i}>
-                            <a
-                              href="#collections"
+                            <Link
+                              to="/shop"
+                              onClick={() => setMega(false)}
                               className="text-sm text-muted-foreground hover:text-gold transition-colors"
                             >
                               {i}
-                            </a>
+                            </Link>
                           </li>
                         ))}
                       </ul>
@@ -116,27 +123,24 @@ const Navbar = () => {
             </AnimatePresence>
           </li>
           <li>
-            <a
-              href="#collections"
-              className="hover:text-gold transition-colors"
-            >
+            <Link to="/shop" className="hover:text-gold transition-colors">
               Collections
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#occasion" className="hover:text-gold transition-colors">
+            <Link to="/shop" className="hover:text-gold transition-colors">
               Occasions
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#craft" className="hover:text-gold transition-colors">
+            <Link to="/shop" className="hover:text-gold transition-colors">
               Craftsmanship
-            </a>
+            </Link>
           </li>
           <li>
-            <a href="#corporate" className="hover:text-gold transition-colors">
+            <Link to="/shop" className="hover:text-gold transition-colors">
               Corporate
-            </a>
+            </Link>
           </li>
         </ul>
 
@@ -150,9 +154,11 @@ const Navbar = () => {
           <IconBtn label="Account" className="hidden sm:inline-flex">
             <User className="h-5 w-5" />
           </IconBtn>
-          <IconBtn label="Cart" badge="2">
-            <ShoppingBag className="h-5 w-5" />
-          </IconBtn>
+          <Link to="/shop">
+            <IconBtn label="Cart" badge="2">
+              <ShoppingBag className="h-5 w-5" />
+            </IconBtn>
+          </Link>
           <button
             className="lg:hidden p-2"
             onClick={() => setOpen(true)}
@@ -193,19 +199,37 @@ const Navbar = () => {
                   <X className="h-6 w-6" />
                 </button>
               </div>
+
+              <div className="mb-6">
+                <Link
+                  to="/"
+                  onClick={() => setOpen(false)}
+                  className="block font-display text-lg text-foreground hover:text-gold transition-colors mb-4"
+                >
+                  Home
+                </Link>
+                <Link
+                  to="/shop"
+                  onClick={() => setOpen(false)}
+                  className="block font-display text-lg text-foreground hover:text-gold transition-colors mb-6"
+                >
+                  Shop All Collections
+                </Link>
+              </div>
+
               {Object.entries(megaMenu).map(([g, items]) => (
                 <div key={g} className="mb-6">
                   <p className="font-display text-lg text-gold mb-2">{g}</p>
                   <ul className="space-y-2 pl-1">
                     {items.map((i) => (
                       <li key={i}>
-                        <a
-                          href="#collections"
+                        <Link
+                          to="/shop"
                           onClick={() => setOpen(false)}
                           className="text-muted-foreground hover:text-foreground transition-colors"
                         >
                           {i}
-                        </a>
+                        </Link>
                       </li>
                     ))}
                   </ul>
