@@ -68,32 +68,18 @@ const ContactPage = () => {
       <Navbar />
 
       {/* Page Header */}
-      <header className="bg-secondary/50 border-b border-border pt-32 pb-16 text-center">
-        <div className="container max-w-3xl mx-auto">
-          <motion.p
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-xs uppercase tracking-[0.3em] text-gold mb-3"
-          >
-            We’re Here to Help
-          </motion.p>
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 }}
-            className="font-display text-4xl md:text-6xl leading-tight"
-          >
+      <header className="bg-gradient-to-b from-secondary/60 to-background border-b border-border/60 pt-24 pb-8 text-center">
+        <div className="container max-w-xl mx-auto">
+          <span className="text-[0.65rem] uppercase tracking-[0.3em] text-gold font-semibold block mb-1">
+            Customer Studio
+          </span>
+          <h1 className="font-display text-2xl md:text-4xl tracking-tight">
             Get in Touch With Us
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-muted-foreground mt-4 text-lg"
-          >
-            Have a custom design inquiry, corporate gifting request, or a
-            question about your order? Connect with our design specialists.
-          </motion.p>
+          </h1>
+          <p className="text-muted-foreground text-xs md:text-sm mt-1.5">
+            Need advice on artwork approval, custom dimensions, or delivery
+            tracking? Connect with our team below.
+          </p>
         </div>
       </header>
 

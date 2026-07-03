@@ -338,21 +338,22 @@ const ShopPage = () => {
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Navbar />
 
-      <header className="bg-secondary/50 border-b border-border pt-28 pb-10">
-        <div className="container">
-          <p className="text-xs uppercase tracking-[0.3em] text-gold mb-3">
-            The collection
-          </p>
-          <h1 className="font-display text-4xl md:text-5xl">
-            Shop All Nameplates &amp; Gifts
-          </h1>
-          <p className="text-muted-foreground mt-3 max-w-xl">
-            Explore our full range of handcrafted, made-to-order pieces. Filter
-            by material, theme, occasion and more.
+      <header className="bg-background border-b border-border/60 pt-24 pb-6">
+        <div className="container flex flex-col md:flex-row md:items-end justify-between gap-2">
+          <div>
+            <span className="text-[0.65rem] uppercase tracking-[0.3em] text-gold font-semibold block">
+              The Collection
+            </span>
+            <h1 className="font-display text-2xl md:text-4xl font-semibold tracking-tight mt-0.5">
+              Shop All Nameplates & Gifts
+            </h1>
+          </div>
+          <p className="text-muted-foreground text-xs md:text-sm max-w-md">
+            Handcrafted and made-to-order. Engineered with secure back hooks for
+            clean wall mounting.
           </p>
         </div>
       </header>
-
       <div className="container py-8 flex gap-10">
         {/* Sidebar filters (desktop) */}
         <aside className="hidden lg:block w-72 shrink-0">
