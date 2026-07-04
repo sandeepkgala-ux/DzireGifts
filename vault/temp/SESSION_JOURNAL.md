@@ -5252,3 +5252,91 @@
 ## 2026-07-03 21:42:01.515Z click
 - element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Add to Cart"}
 
+## 2026-07-04 12:35:46.392Z load
+- url: http://localhost:3000/
+
+## 2026-07-04 12:35:46.547Z navigate
+- url: http://localhost:3000/
+- via: replaceState
+
+## 2026-07-04 12:35:50.132Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Name Plates"}
+
+## 2026-07-04 12:35:50.133Z navigate
+- url: http://localhost:3000/shop
+- via: pushState
+
+## 2026-07-04 12:35:54.106Z click
+- element: {"tag":"img","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-04 12:35:54.777Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Add"}
+
+## 2026-07-04 12:35:59.993Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Add"}
+
+## 2026-07-04 12:36:00.938Z click
+- element: {"tag":"img","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-04 12:37:53.690Z click
+- element: {"tag":"img","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-04 12:37:55.089Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" View"}
+
+## 2026-07-04 12:37:56.234Z click
+- element: {"tag":"a","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":"Customize & Buy"}
+
+## 2026-07-04 12:37:56.235Z navigate
+- url: http://localhost:3000/product/13
+- via: pushState
+
+## 2026-07-04 12:37:56.893Z network.error
+- transport: xhr
+- method: GET
+- url: http://localhost:3000/wp-json/wc/v3/products/13
+- status: 401
+- statusText: Unauthorized
+- response: {"code":"woocommerce_rest_cannot_view","message":"Sorry, you cannot view this resource.","data":{"status":401}}
+- durationMs: 654
+
+## 2026-07-04 12:37:56.894Z console.error
+- text: 
+    Error fetching single product: AxiosError: Request failed with status code 401
+        at settle (http://localhost:3000/node_modules/.vite/deps/axios.js?v=d11df250:1534:12)
+        at XMLHttpRequest.onloadend (http://localhost:3000/node_modules/.vite/deps/axios.js?v=d11df250:1997:7)
+
+## 2026-07-04 12:37:59.901Z navigate
+- url: http://localhost:3000/shop
+- via: popstate
+
+## 2026-07-04 12:38:02.250Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Add"}
+
+## 2026-07-04 12:38:03.122Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Add"}
+
+## 2026-07-04 12:38:03.554Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Add"}
+
+## 2026-07-04 12:38:03.825Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" Add"}
+
+## 2026-07-04 12:38:05.010Z click
+- element: {"tag":"button","role":null,"ariaLabel":"Account","name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-04 12:38:05.978Z click
+- element: {"tag":"button","role":null,"ariaLabel":"Wishlist","name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-04 12:38:06.515Z click
+- element: {"tag":"button","role":null,"ariaLabel":"Search","name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-04 12:38:08.306Z click
+- element: {"tag":"img","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+
+## 2026-07-04 12:38:09.642Z click
+- element: {"tag":"button","role":null,"ariaLabel":null,"name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":" View"}
+
+## 2026-07-04 12:38:13.282Z click
+- element: {"tag":"button","role":null,"ariaLabel":"Close","name":null,"type":null,"id":null,"placeholder":null,"label":null,"value":null,"valueLength":0,"text":""}
+

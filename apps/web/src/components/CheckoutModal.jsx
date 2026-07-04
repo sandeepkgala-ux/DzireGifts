@@ -1,21 +1,11 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import {
-  X,
-  ShieldCheck,
-  CreditCard,
-  Smartphone,
-  CheckCircle2,
-  Lock,
-  ArrowRight,
-  Loader2,
-  Mail,
-} from "lucide-react";
+import { X, CheckCircle2, Lock, ArrowRight, Loader2 } from "lucide-react";
 import { useStore } from "../context/useStore";
 
 const CheckoutModal = ({ isOpen, onClose }) => {
   const { cart, cartSubtotal } = useStore();
-  const [step, setStep] = useState("address"); // 'address', 'payment', 'success'
+  const [step, setStep] = useState("address");
   const [isProcessing, setIsProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
   const [emailSent, setEmailSent] = useState(false);
@@ -35,50 +25,67 @@ const CheckoutModal = ({ isOpen, onClose }) => {
   };
 
   const sendAutomatedWorkshopEmail = async (txnId) => {
-    const orderPayload = {
-      transactionId: txnId,
-      amount: cartSubtotal,
-      customer: shippingData,
-      items: cart,
-      timestamp: new Date().toISOString(),
-    };
-
-    console.log("🚀 [SILENT EMAIL DISPATCH] Sending payload...", orderPayload);
+    // Replace with your EmailJS or API call logic
+    console.log("🚀 [SILENT EMAIL DISPATCH] Order:", txnId);
     setEmailSent(true);
   };
 
-  const handlePaymentSubmit = (e) => {
+  const handlePaymentSubmit = async (e) => {
     e.preventDefault();
     setIsProcessing(true);
 
-    setTimeout(() => {
-      const generatedTxnId =
-        "PAY_" + Math.random().toString(36).substring(2, 9).toUpperCase();
-      setTransactionId(generatedTxnId);
+    // Secure API Credentials
+    const consumerKey = import.meta.env.VITE_WC_CONSUMER_KEY;
+    const consumerSecret = import.meta.env.VITE_WC_CONSUMER_SECRET;
+    const url = `https://dev.dziregifts.com/wp-json/wc/v3/orders?consumer_key=${consumerKey}&consumer_secret=${consumerSecret}`;
+
+    const orderData = {
+      payment_method: shippingData.paymentMethod,
+      payment_method_title: "Online Payment",
+      set_paid: true,
+      billing: {
+        first_name: shippingData.fullName,
+        address_1: shippingData.address,
+        city: shippingData.city,
+        email: shippingData.email,
+        phone: shippingData.phone,
+      },
+      line_items: cart.map((item) => ({
+        product_id: item.id,
+        quantity: item.quantity,
+      })),
+    };
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(orderData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setTransactionId(data.id);
+        setStep("success");
+        sendAutomatedWorkshopEmail(data.id);
+      } else {
+        console.error("Order failed:", data);
+        alert("Payment failed, please check your console.");
+      }
+    } catch (error) {
+      console.error("Network error:", error);
+      alert("Connection error. Please try again.");
+    } finally {
       setIsProcessing(false);
-      setStep("success");
-      sendAutomatedWorkshopEmail(generatedTxnId);
-    }, 2000);
+    }
   };
 
   const sendPaidOrderToWhatsApp = () => {
     const businessPhoneNumber = "919876543210";
-    let message = `*✅ PAID ORDER CONFIRMED - DZIRE GIFTS*\n\n`;
-    message += `*Transaction ID:* #${transactionId}\n`;
-    message += `*Amount Paid Online:* ₹${cartSubtotal.toLocaleString()}\n`;
-    message += `*Payment Mode:* ${shippingData.paymentMethod === "upi" ? "UPI / GPay / PhonePe" : "Credit/Debit Card"}\n\n`;
-    message += `*DELIVERY DETAILS:*\n• *Name:* ${shippingData.fullName}\n• *Phone:* ${shippingData.phone}\n• *Address:* ${shippingData.address}, ${shippingData.city} - ${shippingData.pincode}\n\n`;
-    message += `*CUSTOMIZATION SPECS (${cart.length} Items):*\n-----------------------------------\n`;
-
-    cart.forEach((item, index) => {
-      message += `*${index + 1}. ${item.name}*\n`;
-      message += `• *Qty:* ${item.quantity}\n`;
-      if (item.customDetails) {
-        message += `• *Notes:* "${item.customDetails.text || "N/A"}"\n`;
-      }
-      message += `-----------------------------------\n`;
-    });
-
+    let message = `*✅ PAID ORDER CONFIRMED - DZIRE GIFTS*\n\n*Transaction ID:* #${transactionId}\n`;
+    message += `*Amount:* ₹${cartSubtotal.toLocaleString()}\n`;
+    message += `*Delivery:* ${shippingData.fullName}, ${shippingData.address}, ${shippingData.city}\n`;
     const encodedPayload = encodeURIComponent(message);
     window.open(
       `https://api.whatsapp.com/send?phone=${businessPhoneNumber}&text=${encodedPayload}`,
@@ -95,27 +102,14 @@ const CheckoutModal = ({ isOpen, onClose }) => {
         className="fixed inset-0 bg-black/75 backdrop-blur-sm"
         onClick={step === "success" ? onClose : null}
       />
-      <motion.div
-        initial={{ opacity: 0, scale: 0.95, y: 20 }}
-        animate={{ opacity: 1, scale: 1, y: 0 }}
-        exit={{ opacity: 0, scale: 0.95 }}
-        className="relative w-full max-w-xl bg-background border border-border rounded-3xl shadow-2xl overflow-hidden z-10"
-      >
+      <motion.div className="relative w-full max-w-xl bg-background border border-border rounded-3xl shadow-2xl overflow-hidden z-10">
         <div className="bg-card px-6 py-5 border-b border-border flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Lock className="h-4 w-4 text-gold" />
             <span className="font-display font-semibold text-lg">
-              Secure Express Checkout
+              Secure Checkout
             </span>
           </div>
-          {step !== "success" && (
-            <button
-              onClick={onClose}
-              className="p-1 rounded-full hover:bg-secondary text-muted-foreground hover:text-foreground"
-            >
-              <X className="h-5 w-5" />
-            </button>
-          )}
         </div>
 
         {step === "address" && (
@@ -123,75 +117,45 @@ const CheckoutModal = ({ isOpen, onClose }) => {
             onSubmit={() => setStep("payment")}
             className="p-6 md:p-8 space-y-5"
           >
-            <div className="bg-secondary/50 p-4 rounded-2xl border border-border flex justify-between items-center text-sm">
-              <span>Order Subtotal ({cart.length} items):</span>
-              <span className="font-display font-bold text-xl text-gold">
-                ₹{cartSubtotal.toLocaleString()}
-              </span>
-            </div>
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground pt-2">
+            <h3 className="font-semibold text-sm uppercase text-muted-foreground">
               1. Delivery Address
             </h3>
-            <div className="grid grid-cols-2 gap-3">
-              <div className="col-span-2 sm:col-span-1">
-                <label className="text-xs font-medium text-muted-foreground">
-                  Full Name *
-                </label>
-                <input
-                  required
-                  name="fullName"
-                  value={shippingData.fullName}
-                  onChange={handleInputChange}
-                  className="w-full mt-1 bg-card border border-border rounded-xl px-4 py-2.5 text-sm focus:border-gold outline-none"
-                />
-              </div>
-              <div className="col-span-2 sm:col-span-1">
-                <label className="text-xs font-medium text-muted-foreground">
-                  Mobile Number *
-                </label>
-                <input
-                  required
-                  name="phone"
-                  value={shippingData.phone}
-                  onChange={handleInputChange}
-                  className="w-full mt-1 bg-card border border-border rounded-xl px-4 py-2.5 text-sm focus:border-gold outline-none"
-                />
-              </div>
-              <div className="col-span-2">
-                <label className="text-xs font-medium text-muted-foreground">
-                  Complete Street Address *
-                </label>
-                <input
-                  required
-                  name="address"
-                  value={shippingData.address}
-                  onChange={handleInputChange}
-                  className="w-full mt-1 bg-card border border-border rounded-xl px-4 py-2.5 text-sm focus:border-gold outline-none"
-                />
-              </div>
-            </div>
+            <input
+              required
+              name="fullName"
+              placeholder="Full Name"
+              value={shippingData.fullName}
+              onChange={handleInputChange}
+              className="w-full bg-card border border-border rounded-xl px-4 py-2.5 text-sm"
+            />
+            <input
+              required
+              name="address"
+              placeholder="Address"
+              value={shippingData.address}
+              onChange={handleInputChange}
+              className="w-full bg-card border border-border rounded-xl px-4 py-2.5 text-sm"
+            />
             <button
               type="submit"
-              className="w-full mt-4 bg-gold text-primary font-bold py-4 rounded-xl shadow-lg hover:brightness-105 transition flex items-center justify-center gap-2 text-sm uppercase tracking-wide"
+              className="w-full bg-gold text-primary font-bold py-4 rounded-xl"
             >
-              Continue to Payment <ArrowRight className="h-4 w-4" />
+              Continue <ArrowRight className="h-4 w-4 inline" />
             </button>
           </form>
         )}
 
         {step === "payment" && (
           <form onSubmit={handlePaymentSubmit} className="p-6 md:p-8 space-y-6">
-            <h3 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground">
-              2. Select Payment Mode
-            </h3>
             <button
               type="submit"
               disabled={isProcessing}
-              className="w-full bg-gold text-primary font-bold py-4 rounded-xl shadow-xl hover:brightness-105 transition flex items-center justify-center gap-2 text-sm uppercase tracking-wide disabled:opacity-50"
+              className="w-full bg-gold text-primary font-bold py-4 rounded-xl disabled:opacity-50"
             >
               {isProcessing ? (
                 <>
-                  <Loader2 className="h-5 w-5 animate-spin" /> Verifying...
+                  <Loader2 className="h-5 w-5 animate-spin inline" />{" "}
+                  Verifying...
                 </>
               ) : (
                 <>Pay Securely — ₹{cartSubtotal.toLocaleString()}</>
@@ -203,19 +167,12 @@ const CheckoutModal = ({ isOpen, onClose }) => {
         {step === "success" && (
           <div className="p-8 text-center space-y-6">
             <CheckCircle2 className="h-16 w-16 text-green-500 mx-auto" />
-            <h2 className="font-display text-2xl font-bold">
-              Thank You, {shippingData.fullName}!
-            </h2>
-            {emailSent && (
-              <p className="text-xs text-muted-foreground">
-                Order details sent to your email.
-              </p>
-            )}
+            <h2 className="font-display text-2xl font-bold">Thank You!</h2>
             <button
               onClick={sendPaidOrderToWhatsApp}
-              className="w-full bg-[#25D366] text-white font-bold py-4 rounded-xl transition"
+              className="w-full bg-[#25D366] text-white font-bold py-4 rounded-xl"
             >
-              Chat with Designer on WhatsApp <ArrowRight className="h-4 w-4" />
+              Chat with Designer <ArrowRight className="h-4 w-4 inline" />
             </button>
           </div>
         )}
