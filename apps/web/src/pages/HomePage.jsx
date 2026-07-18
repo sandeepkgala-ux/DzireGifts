@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import axios from "axios";
 import {
   ArrowRight,
   Star,
@@ -9,22 +10,11 @@ import {
   Sparkles,
   Award,
   PenTool,
-  Package,
-  Gift,
-  Play,
-  Instagram,
   Quote,
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
-import {
-  IMG,
-  categories,
-  products,
-  occasions,
-  materials,
-  testimonials,
-} from "@/data/site";
+import { IMG, testimonials } from "@/data/site";
 
 const fade = {
   initial: { opacity: 0, y: 30 },
@@ -34,10 +24,10 @@ const fade = {
 };
 
 const Section = ({ id, kicker, title, sub, children, className = "" }) => (
-  <section id={id} className={`py-20 md:py-28 ${className}`}>
+  <section id={id} className={`py-12 md:py-16 ${className}`}>
     <div className="container">
       {(kicker || title) && (
-        <motion.div {...fade} className="max-w-2xl mb-12 md:mb-16">
+        <motion.div {...fade} className="max-w-2xl mb-10 md:mb-12">
           {kicker && (
             <p className="text-xs uppercase tracking-[0.3em] text-gold mb-3">
               {kicker}
@@ -61,6 +51,56 @@ const Section = ({ id, kicker, title, sub, children, className = "" }) => (
 );
 
 const HomePage = () => {
+  const [liveProducts, setLiveProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  // Fetch live WooCommerce products on mount (Limited to 6)
+  useEffect(() => {
+    async function fetchLiveProducts() {
+      try {
+        if (!import.meta.env.VITE_API_URL) {
+          setLoading(false);
+          return;
+        }
+        const response = await axios.get(
+          `${import.meta.env.VITE_API_URL}/products`,
+          {
+            params: {
+              consumer_key: import.meta.env.VITE_WC_CONSUMER_KEY,
+              consumer_secret: import.meta.env.VITE_WC_CONSUMER_SECRET,
+              status: "publish",
+              per_page: 6,
+            },
+          },
+        );
+
+        if (response.data && Array.isArray(response.data)) {
+          const mapped = response.data.map((item) => ({
+            id: item.id,
+            name: item.name,
+            price: Number(item.price || item.regular_price || 0),
+            mrp: Number(item.regular_price || item.price || 0),
+            rating: Number(item.average_rating || 4.8),
+            reviews: item.rating_count || 12,
+            img:
+              item.images?.[0]?.src ||
+              "https://via.placeholder.com/400x400?text=No+Image",
+            category: item.categories?.[0]?.name || "Personalized Decor",
+            inStock: item.stock_status === "instock",
+            // Assuming your backend tags are setup here to map to your card badges
+            tags: item.tags?.map((t) => t.name) || [],
+          }));
+          setLiveProducts(mapped);
+        }
+      } catch (err) {
+        console.error("Failed to fetch WooCommerce products:", err.message);
+      } finally {
+        setLoading(false);
+      }
+    }
+    fetchLiveProducts();
+  }, []);
+
   return (
     <div className="min-h-screen bg-background text-foreground antialiased">
       <Navbar />
@@ -76,20 +116,11 @@ const HomePage = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/60 to-transparent" />
 
         <div className="container relative z-10 text-white flex flex-col items-start pt-20">
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-            className="text-xs uppercase tracking-[0.4em] text-gold mb-6"
-          >
-            Handcrafted personalization
-          </motion.p>
-
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.9, ease: "easeOut" }}
-            className="font-display text-4xl md:text-6xl lg:text-7xl max-w-3xl leading-[1.1]"
+            className="font-display text-3xl md:text-5xl lg:text-6xl max-w-3xl leading-[1.1]"
           >
             Premium Personalized Name Plates{" "}
             <span className="italic text-gold">Crafted for Every Home.</span>
@@ -116,12 +147,6 @@ const HomePage = () => {
               className="bg-gold text-primary font-semibold px-9 py-4 rounded-xl flex items-center gap-2 hover:brightness-105 active:scale-[0.98] transition shadow-lg shadow-black/20"
             >
               Customize Your Name Plate <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              to="/shop"
-              className="border border-white/50 backdrop-blur px-9 py-4 rounded-xl font-medium hover:bg-white/10 transition"
-            >
-              Explore Collections
             </Link>
           </motion.div>
 
@@ -155,8 +180,8 @@ const HomePage = () => {
       <div className="border-b border-border bg-secondary/50">
         <div className="container grid grid-cols-2 md:grid-cols-4 divide-x divide-border">
           {[
-            [Truck, "Free shipping", "On orders over \u20B92999"],
-            [ShieldCheck, "Secure checkout", "UPI · Cards · COD · EMI"],
+            [Truck, "Free shipping", "All over India"],
+            [ShieldCheck, "Secure checkout", "UPI · Cards · EMI"],
             [Award, "25,000+ homes", "Trusted across India"],
             [PenTool, "Made to order", "Crafted just for you"],
           ].map(([Icon, t, s], i) => (
@@ -171,53 +196,31 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* Categories */}
-      <Section
-        id="collections"
-        kicker="Featured categories"
-        title="Shop our signature collections"
-        sub="From engraved villa boards to acrylic apartment plates and heartfelt personalized gifts."
-      >
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {categories.map((c, i) => (
-            <motion.div
-              key={c.name}
-              {...fade}
-              transition={{ ...fade.transition, delay: i * 0.08 }}
-              className="group relative rounded-2xl overflow-hidden aspect-[3/4]"
-            >
-              <Link to="/shop" className="block h-full w-full">
-                <img
-                  src={c.img}
-                  alt={c.name}
-                  loading="lazy"
-                  className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                <div className="absolute bottom-0 p-5 text-white">
-                  <span className="text-[0.65rem] uppercase tracking-wider text-gold">
-                    {c.tag}
-                  </span>
-                  <h3 className="font-display text-xl mt-1">{c.name}</h3>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
-        </div>
-      </Section>
+      {/* Categories (HIDDEN PER REQUEST) */}
+      {/* 
+      <Section id="collections" kicker="Featured categories" title="Shop our signature collections" sub="From engraved villa boards to acrylic apartment plates and heartfelt personalized gifts.">
+        ...
+      </Section> 
+      */}
 
-      {/* Bestsellers */}
+      {/* Dynamic Bestsellers (Max 6) */}
       <Section
         id="products"
         kicker="Best sellers & trending"
         title="Loved in homes across India"
         className="bg-secondary/40"
       >
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {products.map((p) => (
-            <ProductCard key={p.id} p={p} />
-          ))}
-        </div>
+        {loading ? (
+          <div className="text-center py-12 text-sm text-muted-foreground">
+            ⏳ Loading live inventory...
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {liveProducts.map((p) => (
+              <ProductCard key={p.id} p={p} />
+            ))}
+          </div>
+        )}
         <div className="text-center mt-12">
           <Link
             to="/shop"
@@ -228,69 +231,8 @@ const HomePage = () => {
         </div>
       </Section>
 
-      {/* Personalization */}
-      <section id="personalize" className="py-20 md:py-28">
-        <div className="container grid lg:grid-cols-2 gap-14 items-center">
-          <motion.div {...fade} className="relative">
-            <img
-              src={IMG.woodPlate}
-              alt="Live preview of a personalized wooden nameplate"
-              className="rounded-3xl shadow-2xl"
-            />
-            <div className="absolute -bottom-6 -right-2 md:right-6 bg-card rounded-2xl shadow-xl border border-border p-5 w-56">
-              <p className="text-xs text-muted-foreground mb-1">Live preview</p>
-              <p className="font-display text-2xl text-wood">The Kapoors</p>
-              <div className="mt-3 h-1.5 rounded-full bg-secondary overflow-hidden">
-                <div className="h-full w-2/3 bg-gold" />
-              </div>
-              <p className="text-[0.65rem] text-muted-foreground mt-1.5">
-                18 / 24 characters · Hooks attached
-              </p>
-            </div>
-          </motion.div>
-          <motion.div {...fade}>
-            <p className="text-xs uppercase tracking-[0.3em] text-gold mb-3">
-              Advanced personalization
-            </p>
-            <h2 className="font-display text-3xl md:text-5xl leading-tight">
-              Design it your way, in real time
-            </h2>
-            <p className="text-muted-foreground mt-4 text-lg">
-              Choose your font, add a family surname, house number or a custom
-              quote and watch it come alive instantly. Finished with secure back
-              hooks ready for easy hanging.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-4 mt-8">
-              {[
-                [PenTool, "Live font & name preview"],
-                [Sparkles, "AI design suggestions"],
-                [Gift, "Icons & religious symbols"],
-                [Package, "Hangs flush via back hooks"],
-              ].map(([Icon, t], i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 rounded-xl border border-border p-4 bg-card"
-                >
-                  <Icon
-                    className="h-5 w-5 text-gold shrink-0"
-                    strokeWidth={1.5}
-                  />
-                  <span className="text-sm font-medium">{t}</span>
-                </div>
-              ))}
-            </div>
-            <Link
-              to="/shop"
-              className="mt-8 inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-4 rounded-xl font-semibold active:scale-[0.98] transition"
-            >
-              Start designing <ArrowRight className="h-4 w-4" />
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Lifestyle banner */}
-      <section className="relative py-28 md:py-40 overflow-hidden">
+      <section className="relative py-16 md:py-24 overflow-hidden">
         <img
           src={IMG.livingRoom}
           alt="Personalized wooden wall decor hanging in a warm living room"
@@ -315,86 +257,6 @@ const HomePage = () => {
             Explore lifestyle <ArrowRight className="h-4 w-4" />
           </Link>
         </motion.div>
-      </section>
-
-      {/* Shop by occasion / material */}
-      <Section
-        id="occasion"
-        kicker="Curated for the moment"
-        title="Shop by occasion & material"
-      >
-        <div className="grid md:grid-cols-2 gap-10">
-          <div>
-            <h3 className="font-display text-xl mb-4">By occasion</h3>
-            <div className="flex flex-wrap gap-3">
-              {occasions.map((o) => (
-                <Link
-                  key={o}
-                  to="/shop"
-                  className="px-5 py-2.5 rounded-full border border-border bg-card hover:border-gold hover:text-gold transition text-sm font-medium"
-                >
-                  {o}
-                </Link>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className="font-display text-xl mb-4">By material</h3>
-            <div className="flex flex-wrap gap-3">
-              {materials.map((m) => (
-                <Link
-                  key={m}
-                  to="/shop"
-                  className="px-5 py-2.5 rounded-full border border-border bg-card hover:border-wood hover:text-wood transition text-sm font-medium"
-                >
-                  {m}
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </Section>
-
-      {/* Craftsmanship story */}
-      <section
-        id="craft"
-        className="py-20 md:py-28 bg-primary text-primary-foreground"
-      >
-        <div className="container grid lg:grid-cols-2 gap-14 items-center">
-          <motion.div {...fade}>
-            <p className="text-xs uppercase tracking-[0.3em] text-gold mb-3">
-              Our craftsmanship
-            </p>
-            <h2 className="font-display text-3xl md:text-5xl leading-tight">
-              Every piece begins with a pair of hands
-            </h2>
-            <p className="text-primary-foreground/70 mt-4 text-lg">
-              Sourced hardwoods, hand-finished edges and precise engraving. Our
-              artisans spend years perfecting the craft so your nameplate lasts
-              a lifetime.
-            </p>
-            <div className="grid grid-cols-3 gap-6 mt-10">
-              {[
-                ["12+", "Years of craft"],
-                ["50k+", "Pieces engraved"],
-                ["4.9", "Average rating"],
-              ].map(([n, l]) => (
-                <div key={l}>
-                  <p className="font-display text-3xl md:text-4xl text-gold">
-                    {n}
-                  </p>
-                  <p className="text-sm text-primary-foreground/60 mt-1">{l}</p>
-                </div>
-              ))}
-            </div>
-          </motion.div>
-          <motion.img
-            {...fade}
-            src={IMG.craftsman}
-            alt="Artisan engraving a wooden nameplate"
-            className="rounded-3xl shadow-2xl"
-          />
-        </div>
       </section>
 
       {/* How customization works */}
@@ -422,55 +284,6 @@ const HomePage = () => {
         </div>
       </Section>
 
-      {/* Packaging + Video */}
-      <section className="py-20 md:py-28 bg-secondary/40">
-        <div className="container grid lg:grid-cols-2 gap-8">
-          <motion.div
-            {...fade}
-            className="rounded-3xl overflow-hidden relative aspect-[4/3]"
-          >
-            <img
-              src={IMG.giftBox}
-              alt="Premium gift packaging"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
-              <div className="text-white">
-                <p className="text-xs uppercase tracking-widest text-gold">
-                  Premium packaging
-                </p>
-                <h3 className="font-display text-2xl mt-1">
-                  Unboxing worth remembering
-                </h3>
-              </div>
-            </div>
-          </motion.div>
-          <motion.div
-            {...fade}
-            className="rounded-3xl overflow-hidden relative aspect-[4/3] group cursor-pointer"
-          >
-            <img
-              src={IMG.accessories}
-              alt="Watch our craft video"
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
-              <div className="h-20 w-20 rounded-full bg-white/90 flex items-center justify-center group-hover:scale-105 transition">
-                <Play className="h-8 w-8 text-primary fill-primary ml-1" />
-              </div>
-            </div>
-            <div className="absolute bottom-8 left-8 text-white">
-              <p className="text-xs uppercase tracking-widest text-gold">
-                Watch the story
-              </p>
-              <h3 className="font-display text-2xl mt-1">
-                Inside our workshop
-              </h3>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Testimonials */}
       <Section kicker="Customer stories" title="Adored by 25,000+ homes">
         <div className="grid md:grid-cols-3 gap-6">
@@ -497,42 +310,8 @@ const HomePage = () => {
         </div>
       </Section>
 
-      {/* Instagram gallery */}
-      <Section
-        kicker="@dziregifts"
-        title="From our community"
-        className="bg-secondary/40"
-      >
-        <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
-          {[
-            IMG.woodPlate,
-            IMG.acrylic,
-            IMG.islamic,
-            IMG.giftBox,
-            IMG.accessories,
-            IMG.heroVilla,
-          ].map((src, i) => (
-            <Link
-              key={i}
-              to="/shop"
-              className="group relative rounded-xl overflow-hidden aspect-square block"
-            >
-              <img
-                src={src}
-                alt="Instagram post from Dzire Gifts"
-                loading="lazy"
-                className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 flex items-center justify-center transition">
-                <Instagram className="h-6 w-6 text-white opacity-0 group-hover:opacity-100 transition" />
-              </div>
-            </Link>
-          ))}
-        </div>
-      </Section>
-
       {/* Corporate & Bulk */}
-      <section id="corporate" className="py-20 md:py-28">
+      <section id="corporate" className="py-12 md:py-16">
         <div className="container rounded-3xl bg-wood text-white p-10 md:p-16 grid lg:grid-cols-2 gap-10 items-center">
           <div>
             <p className="text-xs uppercase tracking-[0.3em] text-gold mb-3">
@@ -548,7 +327,7 @@ const HomePage = () => {
           </div>
           <div className="lg:justify-self-end">
             <Link
-              to="/shop"
+              to="/bulk-orders"
               className="inline-flex items-center gap-2 bg-white text-wood font-semibold px-8 py-4 rounded-xl active:scale-[0.98] transition"
             >
               Request a quote <ArrowRight className="h-4 w-4" />
@@ -558,7 +337,7 @@ const HomePage = () => {
       </section>
 
       {/* Newsletter */}
-      <section id="newsletter" className="py-20 md:py-28 bg-secondary/40">
+      <section id="newsletter" className="py-12 md:py-16 bg-secondary/40">
         <div className="container max-w-2xl text-center">
           <p className="text-xs uppercase tracking-[0.3em] text-gold mb-3">
             Stay inspired
@@ -586,76 +365,6 @@ const HomePage = () => {
           </form>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-primary text-primary-foreground/80 pt-16 pb-8">
-        <div className="container grid md:grid-cols-4 gap-10">
-          <div>
-            <span className="font-display text-2xl text-primary-foreground">
-              Dzire <span className="text-gold">Gifts</span>
-            </span>
-            <p className="mt-4 text-sm leading-relaxed">
-              Premium personalized name plates & wooden gifts, handcrafted in
-              India for homes that tell a story.
-            </p>
-          </div>
-          {[
-            [
-              "Shop",
-              [
-                "Nameplates",
-                "Wooden Gifts",
-                "Corporate",
-                "Wedding Collection",
-                "Gift Cards",
-              ],
-            ],
-            [
-              "Help",
-              [
-                "Track Order",
-                "Shipping Policy",
-                "Returns",
-                "Customization Guide",
-                "Contact",
-              ],
-            ],
-            [
-              "Company",
-              ["About Us", "Craftsmanship", "Blog", "Careers", "Bulk Orders"],
-            ],
-          ].map(([h, items]) => (
-            <div key={h}>
-              <p className="font-semibold text-primary-foreground mb-4">{h}</p>
-              <ul className="space-y-2.5 text-sm">
-                {items.map((i) => (
-                  <li key={i}>
-                    <Link
-                      to="/shop"
-                      className="hover:text-gold transition-colors"
-                    >
-                      {i}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-        <div className="container mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row justify-between gap-4 text-xs">
-          <p>
-            &copy; {new Date().getFullYear()} Dzire Gifts. All rights reserved.
-          </p>
-          <div className="flex gap-5">
-            <Link to="/shop" className="hover:text-gold">
-              Privacy Policy
-            </Link>
-            <Link to="/shop" className="hover:text-gold">
-              Terms &amp; Conditions
-            </Link>
-          </div>
-        </div>
-      </footer>
     </div>
   );
 };

@@ -567,11 +567,12 @@ const ShopPage = () => {
               >
                 <X className="h-4 w-4" />
               </button>
-              <div className="bg-secondary aspect-square md:aspect-auto">
+              {/* FIXED QUICK VIEW IMAGE */}
+              <div className="bg-secondary aspect-square md:aspect-auto flex items-center justify-center overflow-hidden">
                 <img
                   src={quick.img}
                   alt={quick.name}
-                  className="h-full w-full object-cover"
+                  className="w-full h-auto max-h-full object-contain p-4"
                 />
               </div>
               <div className="p-7 overflow-y-auto">
@@ -701,14 +702,15 @@ const ShopPage = () => {
                 <div />
                 {compare.map((p) => (
                   <div key={p.id}>
-                    <div className="aspect-square rounded-xl overflow-hidden bg-secondary mb-2">
+                    {/* FIXED COMPARE IMAGE CONTAINER */}
+                    <div className="aspect-square bg-secondary overflow-hidden flex items-center justify-center rounded-2xl h-auto w-full">
                       <img
                         src={p.img}
                         alt={p.name}
-                        className="h-full w-full object-cover"
+                        className="w-full h-auto max-h-full object-contain p-4 transition-transform duration-500 hover:scale-105"
                       />
                     </div>
-                    <p className="font-display leading-snug text-sm">
+                    <p className="font-display leading-snug text-sm mt-2">
                       {p.name}
                     </p>
                   </div>

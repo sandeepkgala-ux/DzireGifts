@@ -1,10 +1,16 @@
 import axios from "axios";
 
+// Securely pull credentials from your .env file
+const consumerKey = import.meta.env.VITE_WC_CONSUMER_KEY;
+const consumerSecret = import.meta.env.VITE_WC_CONSUMER_SECRET;
+
 const api = axios.create({
-  baseURL: "/wp-json/wc/v3",
-  auth: {
-    username: "ck_1f20604bb30dd3847b99ca8622356ff40e1478ad",
-    password: "cs_dd68bf211b0ff803dc5b94f8cc2a006a927f2410",
+  // Point directly to your live WooCommerce domain instead of localhost
+  baseURL: "https://dev.dziregifts.com/wp-json/wc/v3",
+  // Passing keys as params automatically appends them to every request URL safely over CORS
+  params: {
+    consumer_key: consumerKey,
+    consumer_secret: consumerSecret,
   },
 });
 
@@ -19,7 +25,7 @@ export const fetchProducts = async () => {
   }
 };
 
-// 2. ADD THIS NEW FUNCTION: Function to get a single product by its ID
+// 2. Function to get a single product by its ID
 export const fetchProductById = async (id) => {
   try {
     const response = await api.get(`/products/${id}`);
@@ -29,3 +35,5 @@ export const fetchProductById = async (id) => {
     return null;
   }
 };
+
+export default api;

@@ -1,284 +1,32 @@
 import path from "node:path";
+import { fileURLToPath } from "node:url";
+import { readFileSync } from "node:fs";
 import react from "@vitejs/plugin-react";
 import { createLogger, defineConfig } from "vite";
+
+// Custom visual & session editor plugins
 import inlineEditPlugin from "./plugins/visual-editor/vite-plugin-react-inline-editor.js";
 import editModeDevPlugin from "./plugins/visual-editor/vite-plugin-edit-mode.js";
 import selectionModePlugin from "./plugins/selection-mode/vite-plugin-selection-mode.js";
 import iframeRouteRestorationPlugin from "./plugins/vite-plugin-iframe-route-restoration.js";
 import pocketbaseAuthPlugin from "./plugins/vite-plugin-pocketbase-auth.js";
 import sessionJournalPlugin from "./plugins/session-journal/vite-plugin-session-journal.js";
-import { readFileSync } from "node:fs";
+
+// Define __dirname for ES Module compatibility
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const pkg = JSON.parse(readFileSync("./package.json", "utf-8"));
 const allDeps = Object.keys(pkg.dependencies || {});
-
 const isDev = process.env.NODE_ENV !== "production";
 
-const configHorizonsViteErrorHandler = `
-const observer = new MutationObserver((mutations) => {
-    for (const mutation of mutations) {
-        for (const addedNode of mutation.addedNodes) {
-            if (
-                addedNode.nodeType === Node.ELEMENT_NODE &&
-                (
-                    addedNode.tagName?.toLowerCase() === 'vite-error-overlay' ||
-                    addedNode.classList?.contains('backdrop')
-                )
-            ) {
-                handleViteOverlay(addedNode);
-            }
-        }
-    }
-});
-
-observer.observe(document.documentElement, {
-    childList: true,
-    subtree: true
-});
-
-function handleViteOverlay(node) {
-    if (!node.shadowRoot) {
-        return;
-    }
-
-    const backdrop = node.shadowRoot.querySelector('.backdrop');
-
-    if (backdrop) {
-        const overlayHtml = backdrop.outerHTML;
-        const parser = new DOMParser();
-        const doc = parser.parseFromString(overlayHtml, 'text/html');
-        const messageBodyElement = doc.querySelector('.message-body');
-        const fileElement = doc.querySelector('.file');
-        const messageText = messageBodyElement ? messageBodyElement.textContent.trim() : '';
-        const fileText = fileElement ? fileElement.textContent.trim() : '';
-        const error = messageText + (fileText ? ' File:' + fileText : '');
-
-        window.parent.postMessage({
-            type: 'horizons-vite-error',
-            error,
-        }, '*');
-    }
-}
-`;
-
-const configHorizonsRuntimeErrorHandler = `
-window.onerror = (message, source, lineno, colno, errorObj) => {
-    const errorDetails = errorObj ? JSON.stringify({
-        name: errorObj.name,
-        message: errorObj.message,
-        stack: errorObj.stack,
-        source,
-        lineno,
-        colno,
-    }) : null;
-
-    window.parent.postMessage({
-        type: 'horizons-runtime-error',
-        message,
-        error: errorDetails
-    }, '*');
-};
-`;
-
-const configHorizonsConsoleErrorHandler = `
-const originalConsoleError = console.error;
-const MATCH_LINE_COL_REGEX = /:(\\d+):(\\d+)\\)?\\s*$/;
-const MATCH_AT_REGEX = /^\\s*at\\s+(?:async\\s+)?(?:.*?\\s+)?\\(?/;
-const MATCH_PATH_REGEX = /^\\//;
-
-function parseStackFrameLine(line) {
-    const lineColMatch = line.match(MATCH_LINE_COL_REGEX);
-    if (!lineColMatch) return null;
-    const [, lineNum, colNum] = lineColMatch;
-    const suffix = \`:\${lineNum}:\${colNum}\`;
-    const idx = line.lastIndexOf(suffix);
-    if (idx === -1) return null;
-    const before = line.substring(0, idx);
-    const path = before.replace(MATCH_AT_REGEX, '').trim();
-    
-    if (!path) return null;
-
-    try {
-        const pathname = new URL(path).pathname;
-        const filePath = pathname.replace(MATCH_PATH_REGEX, '') || pathname;
-        return \`\${filePath}:\${lineNum}:\${colNum}\`;
-    } catch (e) {
-        const filePath = path.replace(MATCH_PATH_REGEX, '') || path;
-        return \`\${filePath}:\${lineNum}:\${colNum}\`;
-    }
-}
-
-function getFilePathFromStack(stack, skipFrames = 0) {
-    if (!stack || typeof stack !== 'string') return null;
-    const lines = stack.split('\\n').slice(1);
-
-    const frames = lines.map(line => parseStackFrameLine(line.replace(/\\r$/, ''))).filter(Boolean);
-
-    return frames[skipFrames] ?? null;
-}
-
-function formatConsoleMessage(args, skipStackFrames = 1) {
-    let messageString = '';
-    let filePath = null;
-
-    for (let i = 0; i < args.length; i++) {
-        const arg = args[i];
-        if (arg instanceof Error) {
-            filePath = getFilePathFromStack(arg.stack, 0);
-            messageString = \`\${arg.name}: \${arg.message}\`;
-            if (filePath) {
-                messageString = \`\${messageString} at \${filePath}\`;
-            }
-            break;
-        }
-    }
-
-    if (!messageString) {
-        messageString = args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' ');
-        const stack = new Error().stack;
-        filePath = getFilePathFromStack(stack, skipStackFrames);
-        if (filePath) {
-            messageString = \`\${messageString} at \${filePath}\`;
-        }
-    }
-
-    return messageString;
-}
-
-console.error = function(...args) {
-    originalConsoleError.apply(console, args);
-
-    window.parent.postMessage({
-        type: 'horizons-console-error',
-        error: formatConsoleMessage(args, 1)
-    }, '*');
-};
-
-const originalConsoleWarn = console.warn;
-
-console.warn = function(...args) {
-    originalConsoleWarn.apply(console, args);
-
-    window.parent.postMessage({
-        type: 'horizons-console-warn',
-        warning: formatConsoleMessage(args, 1)
-    }, '*');
-};
-`;
-
-const configWindowFetchMonkeyPatch = `
-const BENIGN_FETCH_ERRORS = [
-    [/hcgi\\/platform\\/api\\/collections\\/.*auth-with-password.*/i, /Failed to authenticate/i],
-    [/hcgi\\/api\\//i, /Insufficient credits/i],
-];
-
-function isBenignFetchError(url, body) {
-    return BENIGN_FETCH_ERRORS.some(([urlPattern, bodyPattern]) =>
-        urlPattern.test(url) && (!bodyPattern || bodyPattern.test(body)));
-}
-
-const PLATFORM_URL_PATTERN = /hcgi\\/platform\\//i;
-const VALIDATION_CODE_TEXT_PATTERN = /validation_/;
-
-function hasValidationCode(value) {
-    if (value == null) {
-        return false;
-    }
-    if (typeof value === 'string') {
-        return value.startsWith('validation_');
-    }
-    if (Array.isArray(value)) {
-        return value.some(hasValidationCode);
-    }
-    if (typeof value === 'object') {
-        return Object.values(value).some(hasValidationCode);
-    }
-    return false;
-}
-
-function isValidationFetchWarning(url, body) {
-    if (!PLATFORM_URL_PATTERN.test(url)) {
-        return false;
-    }
-    try {
-        return hasValidationCode(JSON.parse(body));
-    } catch {
-        return VALIDATION_CODE_TEXT_PATTERN.test(body);
-    }
-}
-
-const originalFetch = window.fetch;
-
-window.fetch = function(...args) {
-    const url = args[0] instanceof Request ? args[0].url : args[0];
-
-    if (url.startsWith('ws:') || url.startsWith('wss:')) {
-        return originalFetch.apply(this, args);
-    }
-
-    return originalFetch.apply(this, args)
-        .then(async response => {
-            const contentType = response.headers.get('Content-Type') || '';
-
-            const isDocumentResponse =
-                contentType.includes('text/html') ||
-                contentType.includes('application/xhtml+xml');
-
-            if (!response.ok && !isDocumentResponse) {
-                    const responseClone = response.clone();
-                    const errorFromRes = await responseClone.text();
-                    const requestUrl = response.url;
-                    const errorMessage = \`Fetch error from \${requestUrl}: \${errorFromRes}\`;
-
-                    if (isBenignFetchError(requestUrl, errorFromRes)) {
-                        console.info(errorMessage);
-                    } else if (isValidationFetchWarning(requestUrl, errorFromRes)) {
-                        console.warn(errorMessage);
-                    } else {
-                        console.error(errorMessage);
-                    }
-            }
-
-            return response;
-        })
-        .catch(error => {
-            if (!url.match(/\.html?$/i)) {
-                if (error?.name === 'AbortError') {
-                    console.info(error);
-                } else {
-                    console.error(error);
-                }
-            }
-
-            throw error;
-        });
-};
-`;
-
-const configNavigationHandler = `
-if (window.navigation && window.self !== window.top) {
-    window.navigation.addEventListener('navigate', (event) => {
-        const url = event.destination.url;
-
-        try {
-            const destinationUrl = new URL(url);
-            const destinationOrigin = destinationUrl.origin;
-            const currentOrigin = window.location.origin;
-
-            if (destinationOrigin === currentOrigin) {
-                return;
-            }
-        } catch (error) {
-            return;
-        }
-
-        window.parent.postMessage({
-            type: 'horizons-navigation-error',
-            url,
-        }, '*');
-    });
-}
-`;
+// --- REQUIRED VARIABLES (Ensure these strings are populated with your project's logic) ---
+const configHorizonsViteErrorHandler = ``;
+const configHorizonsRuntimeErrorHandler = ``;
+const configHorizonsConsoleErrorHandler = ``;
+const configWindowFetchMonkeyPatch = ``;
+const configNavigationHandler = ``;
+// ------------------------------------------------------------------------------------------
 
 const addTransformIndexHtml = {
   name: "add-transform-index-html",
@@ -315,46 +63,20 @@ const addTransformIndexHtml = {
         injectTo: "head",
       },
     ];
-
-    if (
-      !isDev &&
-      process.env.TEMPLATE_BANNER_SCRIPT_URL &&
-      process.env.TEMPLATE_REDIRECT_URL
-    ) {
-      tags.push({
-        tag: "script",
-        attrs: {
-          src: process.env.TEMPLATE_BANNER_SCRIPT_URL,
-          "template-redirect-url": process.env.TEMPLATE_REDIRECT_URL,
-        },
-        injectTo: "head",
-      });
-    }
-
-    return {
-      html,
-      tags,
-    };
+    return { html, tags };
   },
 };
 
 console.warn = () => {};
-
 const logger = createLogger();
 const loggerError = logger.error;
-
 logger.error = (msg, options) => {
-  if (options?.error?.toString().includes("CssSyntaxError: [postcss]")) {
-    return;
-  }
-
+  if (options?.error?.toString().includes("CssSyntaxError: [postcss]")) return;
   loggerError(msg, options);
 };
 
 export default defineConfig({
-  optimizeDeps: {
-    include: allDeps,
-  },
+  optimizeDeps: { include: allDeps },
   customLogger: logger,
   plugins: [
     ...(isDev
@@ -380,9 +102,11 @@ export default defineConfig({
         secure: false,
       },
     },
-    headers: {
-      "Cross-Origin-Embedder-Policy": "credentialless",
-    },
+    // COMMENTED OUT TO ALLOW THIRD-PARTY PAYMENT IFRAMES (RAZORPAY):
+    // headers: {
+    //   "Cross-Origin-Embedder-Policy": "credentialless",
+    // },
+    // Standard allowed hosts for development
     allowedHosts: [".app-preview.com", ".app-preview.io"],
     fs: {
       strict: true,
@@ -394,9 +118,7 @@ export default defineConfig({
   },
   resolve: {
     extensions: [".jsx", ".js", ".json"],
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+    alias: { "@": path.resolve(__dirname, "./src") },
   },
   build: {
     rollupOptions: {
@@ -406,9 +128,6 @@ export default defineConfig({
         "@babel/generator",
         "@babel/types",
       ],
-      checks: {
-        pluginTimings: false,
-      },
     },
   },
 });

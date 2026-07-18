@@ -25,10 +25,21 @@ export const StoreContainer = ({ children }) => {
 
   const addToCart = (product, customDetails = null, qty = 1) => {
     setCart((prevCart) => {
+      // Create a unique key based on product ID and customization
       const itemKey = `${product.id}_${customDetails?.text || "standard"}`;
       const existingIndex = prevCart.findIndex(
         (item) => item.cartKey === itemKey,
       );
+
+      // Extract price safely (WooCommerce often returns price as a string)
+      const price = Number(product.price) || 0;
+
+      // Extract image safely
+      const image =
+        product.img ||
+        (product.images && product.images.length > 0
+          ? product.images[0].src
+          : "https://via.placeholder.com/300");
 
       if (existingIndex > -1) {
         const updated = [...prevCart];
@@ -41,11 +52,8 @@ export const StoreContainer = ({ children }) => {
             cartKey: itemKey,
             id: product.id,
             name: product.name,
-            price: Number(product.price || 0),
-            image:
-              product.img ||
-              product.images?.[0]?.src ||
-              "https://via.placeholder.com/300",
+            price: price,
+            image: image,
             customDetails: customDetails || { text: "", instructions: "" },
             quantity: qty,
           },
